@@ -12,8 +12,22 @@ document.addEventListener("DOMContentLoaded",async()=>{
 
         chrome.storage.sync.get([currentVideo],(data)=>{
             const currentVideoBookmarks=data[currentVideo] ? JSON.parse(data[currentVideo]) : [];
+            loadVideoBookmarks(currentVideoBookmarks);
         })
     }else{
         document.querySelector(".title").innerHTML="<h2> Not a youTube Page<h2>"
     }
 })
+
+
+const loadVideoBookmarks= (bookmarkList)=>{
+
+    let bookmarkscontainer=document.querySelector("bookmarks");
+    bookmarkList.forEach(item => {
+        let listItem=document.createElement("li");
+        let playbutton=document.createElement("div");
+
+        console.log(item);
+    });
+
+}

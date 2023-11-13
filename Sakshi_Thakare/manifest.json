@@ -1,5 +1,5 @@
 {
-    "name":"bookmark me",
+    "name":"bookmark my time",
     "version":"0.0.1",
     
     
@@ -18,7 +18,7 @@
     "web_accessible_resources": [
         {
           "resources": [
-            "assets/bk.jpg",
+            "assets/bk.png",
             "assets/play.png",
             "assets/delete.png",
             "assets/save.png"

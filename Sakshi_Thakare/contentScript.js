@@ -30,7 +30,7 @@
           currentVideoBookmarks=await fetchAllBookmarks();
           if(!bookmark_btn_exist){
             const bookmark_btn=document.createElement("img");
-            bookmark_btn.src=chrome.runtime.getURL("assets/bk.jpg")
+            bookmark_btn.src=chrome.runtime.getURL("assets/bk.png")
             bookmark_btn.classList.add("ytp-button");
             bookmark_btn.classList.add("bookmark_btn");
             bookmark_btn.title="bookmark time";
