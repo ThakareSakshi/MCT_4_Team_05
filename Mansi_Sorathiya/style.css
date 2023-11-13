@@ -1,1 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:"Arial",sans-serif;
+}
+/* <---------------Header-------------------------------> */
+header{
+    height:45px;
+}
 
+/* <-----------------take input from user page-----------------------------------------> */
+#add_info h3{
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+#add_info input,#add_info button,#add_info select,#add_info textarea{
+    margin-bottom: 10px;
+}
+#add_info{
+    width:42%;
+    border: 2px solid red;
+    padding:16px;
+}
+#add_info input,#add_info textarea,#add_info select,#add_info button{
+    width:100%;
+    padding:5px;
+}
+
+#add_employment_info{
+    margin-bottom: 1.5rem;
+}
