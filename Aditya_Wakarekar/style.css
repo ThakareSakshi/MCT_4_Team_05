@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto&family=Roboto+Mono&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+:root{
+    --primary_color:rgb(71, 157, 249);
+}
+body{
+    background-color: var(--primary_color);
+}
+.start-Typing{
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    background-color:var(--primary_color);
+}
+.text-editor-container{
+    padding:20px;
+    border:2px solid rgb(249, 245, 245);
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    background-color: white;
+    border-radius: 20px;
+    gap:20px;
+    align-items: center;
+    box-shadow: 5px 5px 5px rgb(12, 93, 175);
+    position: relative;
+
+}
+.info_container{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    
+}
+button{
+    padding:10px 20px;
+    border-radius: 10px;
+    color:white;
+    border:none;
+    background-color: var(--primary_color);
+    box-shadow: 2px 2px 2px rgb(3, 86, 138);
+    
+}
+button:hover{
+ background-color: transparent;
+color:var(--primary_color);
+font-size: 20px;
+box-shadow: 0px 0px 5px var(--primary_color);
+}
+
+textarea{
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    /* padding:15px; */
+    /* position: absolute; */
+    color:white;
+     /* visibility: hidden; */
+}
+.para{
+  font-size: 18px;
+  letter-spacing: .10rem;
+  line-height: 25px;
+  padding:20px;
+  text-align: justify;
+}
+
+.text-bold{
+    font-weight: 700;
+}
+.tenor-gif-embed{
+    height:80px;
+    width: auto;
+    object-fit: cover;
+}
+img{
+    height:100%;
+}
+.heading{
+  font-size: 35px;
+  font-family: 'Agbalumo';
+  letter-spacing: .15em;
+ 
+}
+.typewriter h1 {
+    color: #222222;
+    font-size: 30px;
+    font-family: 'Agbalumo';
+    overflow: hidden; 
+    border-right: .15em solid orange;
+    white-space: nowrap; 
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+ #Difficulty-page,#typing-page,#result-page{
+    display: none;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  }
+  .image{
+    height:100px;
+    width: auto;
+
+  }
+  .loader_section{
+    height:100vh;
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:white;
+    position: absolute;
+    top:0;
+    /* background-color: rgba(0,0,0,.6); */
+    display: none;
+
+  }
+  select, option{
+    padding:10px 20px;
+    border:2px solid var(--primary_color);
+    
+  }
+  .correct{
+     color:green;
+  }
+  .incorrect{
+    color:red;
+    background: rgba(255, 0, 0, 0.127);
+  }
+  #speed{
+    /* font-size: 20px; */
+    font-weight: bold;
+    text-align: center;
+  }

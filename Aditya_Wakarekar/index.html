@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Type Speed</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+
+    <section class="loader_section">
+        <img src="./assets/busy-cat.gif" alt="loading" class="image" >
+        <p>Loading....</p>
+
+    </section>
+    <!-- welcome page------------>
+    <section class="start-Typing" id="welcome-page">
+      <div class="text-editor-container">
+        <div class="typewriter">
+          <h1>Welcome to TypeRush</h1>
+        </div>
+        <div class="tenor-gif-embed">
+          <img src="./assets/busy-cat.gif" alt="" />
+        </div>
+
+        <button id="move-to-difficulty">Start</button>
+      </div>
+    </section>
+
+    <!-- ---------------difficulty page----------------- -->
+    <section class="start-Typing" id="Difficulty-page">
+      <div class="text-editor-container">
+        <h1 class="heading">Difficulty level</h1>
+        <select name="dificulty" id="dificulty-level">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+
+        <button id="move-to-typing">start typing</button>
+      </div>
+    </section>
+
+    <!-- --------------------typing text page---------------- -->
+    <section class="start-Typing" id="typing-page">
+      <div class="text-editor-container">
+        <h1 class="heading">TypeRush</h1>
+        <textarea name="" id="" cols="30" rows="0"></textarea>
+        <p class="para"></p>
+        <div class="info_container">
+          <div>
+            <span class="text-bold">Time :</span>
+            <span id="remaining-time">60 </span>sec
+          </div>
+          <div>
+            <span class="text-bold">Mistake :</span>
+            <span id="mistakes">00</span>
+          </div>
+
+          <div>
+            <span class="text-bold">WPM :</span>
+            <span id="wpm">00</span>
+          </div>
+          <div>
+            <span class="text-bold">CPM :</span>
+            <span id="cpm">00</span>
+          </div>
+
+          <div><button id="try_again_btn">try again</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------result page-------------- -->
+    <section class="start-Typing" id="result-page">
+      <div class="text-editor-container">
+        <h1 class="heading">TimeOut !</h1>
+        <h2></h2>
+        <div id="emojee"></div>
+        <div>
+          <span id="speed">speed</span>
+          
+        </div>
+
+        <button id="try_again_after_result">try again</button>
+      </div>
+    </section>
+
+    <script src="./paragraphs/easy.js"></script>
+    <script src="./paragraphs/medium.js"></script>
+    <script src="./paragraphs/hard.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
