@@ -1,6 +1,6 @@
 // console.log("mansi");
-//! static take info from user page
 
+//!<------------take info from user page-------------->
 //for add employement data
 let addEmploymentBtn = document.querySelector("#add_employment");
 let addEmployementInfoStatic = document.querySelector("#add_employement_info_static")
@@ -55,3 +55,39 @@ addEducationBtn.addEventListener("click", (e) => {
     `;
     addEducationInfoStatic.append(addProjectInfo);
 });
+
+//!<------------------------ template-1------------------------------------------->
+document.querySelector('#color1').value = '#8B0000'
+document.querySelector('#color2').value = '#ffffff'
+let inputs = document.querySelectorAll("input");
+console.log(inputs);
+document.addEventListener("input",(e)=>{
+    console.log(inputs[0].value);
+    document.querySelector("#temp1_header").style.backgroundColor = inputs[0].value;
+    document.querySelector("#temp1_header h1").style.color = inputs[1].value;
+    document.querySelector("#temp1_header h1").innerText = inputs[2].value; 
+})
+
+
+//!download html to pdf
+// let downloadButton = document.querySelector("header button");
+// let pdfContent = document.querySelector("#addInfo");
+
+// //first way
+var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
+ 
+$('#generatePDF').click(function () {
+    doc.fromHTML($('#template_1').html(), 15, 15, {
+        'elementHandlers': specialElementHandlers
+    });
+    document.write();
+    doc.save('sample_file.pdf');
+});
+
+
+
