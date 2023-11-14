@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
             
         })
     }else{
-        document.querySelector(".title").innerHTML="<h2> Not a youTube Page<h2>"
+        document.querySelector(".title").innerHTML=`<img src="./assets/oops.gif"><h2> Not a youTube Page<h2>`
     }
 })
 
@@ -35,7 +35,7 @@ const loadVideoBookmarks= (bookmarkList=[])=>{
         add_new_bookmark(bookmarkItems,bookmark)
     }
    }else{
-    bookmarkItems.innerHTML="<span> no bookmark is added</span>";
+    bookmarkItems.innerHTML="<span> No bookmark is added for this video</span>";
    }
   
 
@@ -102,5 +102,5 @@ const setBookmarkAttributes =  (src, eventListener, controlParentElement) => {
     chrome.tabs.sendMessage(activeTab.id, {
       type: "DELETE",
       value: bookmarkTime,
-    }, viewBookmarks);
+    }, loadVideoBookmarks);
   };

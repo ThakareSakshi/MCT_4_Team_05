@@ -4,9 +4,11 @@
     let youtubeLeftControls, youtubePlayer;
     let currentVideo = "";
     let currentVideoBookmarks = [];
+    
 
-    chrome.runtime.onMessage.addListener((obj, sender, response) => {
-        const { type, value, videoId } = obj;
+    chrome.runtime.onMessage.addListe
+    ner((obj, sender, response) => {
+        const { type, value, videoId ,title} = obj;
         // console.log("hello")
 
         if (type === "NEW") {
@@ -33,10 +35,28 @@
     })
  }
 
+
+//  --------------function to fetch all bookmarks name----------
+
+const fetchlistofbookmarks=()=>{
+    return new Promise((resolve)=>{
+        chrome.storage.sync.get(["AllBookmarksList"], (obj) => {
+            resolve(obj[currentVideo] ? JSON.parse(obj[currentVideo]) : []);
+          });
+         
+    })
+
+}
+
     // ----------function for new video--------------
     const newVideoLoaded= async() =>{
           const bookmark_btn_exist=document.getElementsByClassName("bookmark_btn")[0];
           currentVideoBookmarks=await fetchAllBookmarks();
+          lis
+
+        //   ----------trying to add all bookmarks-----------------
+          
+
           if(!bookmark_btn_exist){
             const bookmark_btn=document.createElement("img");
             bookmark_btn.src=chrome.runtime.getURL("assets/bk.png")
@@ -62,7 +82,11 @@
          
     }
           //----------event handler function for bookmark click-----------
-          const bookmarkClickEventHandler=async()=>{
+          const bookmarkClickEventHandler=async(e)=>{
+            e.target.style.background="white";
+            setTimeout(() => {
+                e.target.style.background="transparent"
+            }, 300);
            const currentTime= youtubePlayer.currentTime
            const newBookmark={
             "time":currentTime,
@@ -72,7 +96,9 @@
            chrome.storage.sync.set({
             [currentVideo]: JSON.stringify([...currentVideoBookmarks, newBookmark].sort((a, b) => a.time - b.time))
         });
-        console.log(newBookmark);
+
+        // ---------------------trying to add all bookmarkslist-------------
+      
 
           }
           const getTime = t => {

@@ -11,7 +11,10 @@
 }
 .title{
     font-weight: 500;
-    color:blue;
+    color:brown;
+    font-size: 18px;
+    text-align: center;
+    margin:5px;
 
 }
 .New-bookmark{
@@ -28,11 +31,13 @@
 .New-bookmark img{
     height: 20px;
     width: auto;
+    
 
 }
 .New-bookmark:hover{
     /* background: linear-gradient(to right,pink,lightgoldenrodyellow); */
-    box-shadow: 2px 2px 5px rgb(246, 99, 99);
+    box-shadow: 3px 3px 6px rgb(137, 137, 137);
+    margin-bottom: 4px;
 }
 .bookmark-controls{
  display: flex;
@@ -41,4 +46,8 @@
 }
 .bookmark-controls img:hover{
     transform: scale(1.2);
+   
+}
+.bookmarks{
+    text-align: center;
 }

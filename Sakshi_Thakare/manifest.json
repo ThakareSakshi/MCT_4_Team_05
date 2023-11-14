@@ -21,7 +21,8 @@
             "assets/bk.png",
             "assets/play.png",
             "assets/delete.png",
-            "assets/save.png"
+            "assets/save.png",
+            "assets/oops.gif"
           ],
           "matches": ["https://*.youtube.com/*"]
         }
