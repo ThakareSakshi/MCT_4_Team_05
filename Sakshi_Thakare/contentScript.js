@@ -7,20 +7,29 @@
 
     chrome.runtime.onMessage.addListener((obj, sender, response) => {
         const { type, value, videoId } = obj;
-        console.log("hello")
+        // console.log("hello")
 
         if (type === "NEW") {
             currentVideo = videoId;
             newVideoLoaded();
-        }
+        }else if (type === "PLAY") {
+            youtubePlayer.currentTime = value;
+          } else if ( type === "DELETE") {
+            currentVideoBookmarks = currentVideoBookmarks.filter((b) => b.time != value);
+            chrome.storage.sync.set({ [currentVideo]: JSON.stringify(currentVideoBookmarks) });
+      
+            response(currentVideoBookmarks);
+          }
+        
+
     });
  //--------------function to fetch chrome storage-----------------------
  const fetchAllBookmarks=()=>{
     return new Promise((resolve)=>{
-        chrome.storage.sync.get([currentVideo],obj=>{
-            resolve( obj[currentVideo] ? JSON.parse(obj[currentVideo]) : [])
-        })
-
+        chrome.storage.sync.get([currentVideo], (obj) => {
+            resolve(obj[currentVideo] ? JSON.parse(obj[currentVideo]) : []);
+          });
+         
     })
  }
 
@@ -57,7 +66,7 @@
            const currentTime= youtubePlayer.currentTime
            const newBookmark={
             "time":currentTime,
-            "desc":"bookmark-time"+getTime(currentTime)
+            "desc":"Bookmark Time "+getTime(currentTime)
            }
            currentVideoBookmarks=await fetchAllBookmarks();
            chrome.storage.sync.set({
@@ -68,10 +77,10 @@
           }
           const getTime = t => {
             var date = new Date(0);
-            date.setSeconds(1);
-        
-            return date.toISOString().substring(11, 0);
-        }
+            date.setSeconds(t);
+          
+            return date.toISOString().substr(11, 8);
+          };
 
 
     newVideoLoaded();
