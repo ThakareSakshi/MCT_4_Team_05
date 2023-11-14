@@ -214,6 +214,6 @@ nav{
     color: #878787;
     font-size: 13px;
 }
-.notflpicartAssured{
+.product_card .rating-container img{
     display: none;
 }

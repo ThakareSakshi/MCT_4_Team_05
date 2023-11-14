@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded",()=>{
              >${product.rating}<i class="fa fa-star" aria-hidden="true"></i
            ></span>
            
-           <img src=${"./assets/flipcartassured.png"} class=${product.flipkartAssured? "flipcart_assured":"notflpicartAssured"}/>
+           <img src=${"./assets/flipcartassured.png"} style="display:${product.flipkartAssured? "unset":"none"}"/>
          </div>
          <div>
            <span class="special_price">₹${product.specialPrice}</span>
