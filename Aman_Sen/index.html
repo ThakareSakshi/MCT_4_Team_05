@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flipcart</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img
+          src="./assets/flipkart-plus.png"
+          alt=""
+          class="flipcart-name-icon"
+        />
+        <a href="#"
+          >Explore <span>Plus <img src="./assets/plus.png" /></span
+        ></a>
+      </div>
+      <div class="searchbox">
+        <input type="search" placeholder="Search Products, Brands and More.." />
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+      <button class="login-button">Login</button>
+
+      <span>Become A Seller</span>
+      <span>More</span>
+      <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart </span>
+    </nav>
+    <section class="product_category_list">
+      <span class="category-item">Electronic</span>
+      <span class="category-item">TVs & Appliances</span>
+      <span class="category-item">Men </span>
+      <span class="category-item">Women</span>
+      <span class="category-item">Baby & Kids </span>
+      <span class="category-item">Home & Furniture</span>
+      <span class="category-item">Sports, Books & More </span>
+      <span class="category-item">Flights</span>
+      <span class="category-item">Offer Zone</span>
+    </section>
+    <section class="main-body-container">
+      <section class="sidebar-divs-container"></section>
+      <section class="main-content-container">
+        <div class="home-computers">
+          <a href="#">Home </a> > <a href="#">Computers</a>
+          <p>
+            If you want to buy high-end computers with multitasking abilities or
+            an entry-level one, you can find all options online on Flipkart.
+            Look out for PCs with ample storage space, or enhanced computing
+            speed, or high-end configuration. The high-end desktop models or
+            premium laptops offer robust security and powerful performances
+            built for superior durability. Coupled with high-performance
+            processors and other enhanced features, most high-end desktop
+            computers provide a fine balance between performance and price.
+            Also, check out entry-level and mid-range level laptops for your
+            daily needs with basic multi-tasking abilities. You can find the
+            latest computers at best prices during Big Billion Days. Find out
+            more about entry-level desktop computers and high-end models with
+            multitasking abilities and high-end processing needs. With several
+            brands offering attractive computer price points, you can choose one
+            that suits your requirements. Choose from a wide range of popular
+            brands including Lenovo, Electrobot, ENTWINO, HP, iBall, and much
+            more. Choose newly launched models and brand new laptops available
+            at a discounted rate during the sale and bring home one that fits
+            the bill. Check and compare the prices and features offered on a
+            wide range of products. Go through the reviews and place your order
+            for these devices online, and get them delivered to your home.
+          </p>
+          <div class="sorting-options">
+            <h2 class="sort-by-name">Computers</h2>
+            <span>(Showing 1 – 40 products of 78,301 products)</span>
+            <div class="sort-by">
+              <span class="sort-by-name">Sort By</span>
+              <span>Popularity</span>
+              <span>Price -- Low to High</span>
+              <span>Price -- High to Low</span>
+              <span>Newest First</span>
+            </div>
+          </div>
+        </div>
+        <!-- ------------dom manipulation starts here--------- -->
+        <section class="products_container">
+          <div class="product_card">
+            <img src="./assets//product1.jpg" alt="" />
+            <span class="sponsered">sponsered</span>
+            <span class="product_name">Bestor USB Hub Multiport Adapter for MacBook Pro Air M1...</span>
+            <span class="color">grey</span>
+            <div >
+              <span class="rating"
+                >4.5 <i class="fa fa-star" aria-hidden="true"></i
+              ></span>
+              
+              <img src="./assets/flipcartassured.png" class="flipcart_assured"/>
+            </div>
+            <div>
+              <span class="special_price">₹999</span>
+              <span class="original_price">₹1200</span>
+              <span class="discount">32% off</span>
+            </div>
+            <div class="delivery">free delivery</div>
+            <div class="offers">Bank offer</div>
+          </div>
+        </section>
+      </section>
+    </section>
+
+    <script src="./data.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
