@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Payment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="first">
+            <img src="./online-banking.jpeg" alt="">
+            <h1>OnlineBanking</h1>
+        </div>
+        <div class="second">
+            <button id="btn2">Bank Payment</button>
+            <button id="btn1">Mobile Payment</button>
+        </div>
+    </nav>
+    <main>
+        <h1 class="heading">Welcome to OnlineBanking !</h1>
+        <div class="" id="container1">
+            <form action="" id="form1">
+                <input type="number" placeholder="Mobile number" required id="mobileNumber">
+                <input type="number" placeholder="Ammount" required id="mobileAmmount">
+                <span id="loader"></span>
+                <button id="mobileBtn">Pay</button>
+            </form>
+        </div>
+        <div class="" id="container2">
+            <form action="" id="form2">
+                <input type="text" placeholder="Name" required id="accountholder">
+                <input type="text" placeholder="Bank Name" required>
+                <input type="text" placeholder="IFSC CODE">
+                <input type="number" placeholder="Account number" required id="account">
+                <input type="number" placeholder="Ammount" id="bankAmmount">
+                <span id="loader1"></span>
+                <button id="bankBtn">Pay</button>
+            </form>
+        </div>
+    </main>
+    
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
