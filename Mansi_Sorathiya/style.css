@@ -14,8 +14,12 @@ header h1{
     color:white;
 }
 /*<--------------------main container--------------------------------------------------------> */
+
 #main_container{
     display:flex;
+    flex-wrap: wrap;
+    width:100%;
+    border:2px solid pink;
 }
 
 /* <-----------------take input from user page-----------------------------------------> */
@@ -39,6 +43,11 @@ header h1{
 
 #add_employment_info{
     margin-bottom: 1.5rem;
+}
+
+#add_employement_icons{
+    display:flex;
+    gap:20px;
 }
 
 /* <--------------#template_1-------------------------> */
@@ -70,4 +79,61 @@ header h1{
 #temp1_2{
     margin-top: 100px;
     padding:10px;
+}
+
+#temp1_skills{
+    display: flex;
+    /* background-color: black; */
+    width:100%;
+    gap:10px;
+    font-size: 16px;
+    flex-wrap: wrap;
+    color:white;
+    width:fit-content;
+}
+.div_skill{
+    margin-right :10px;
+    background-color: black;
+}
+
+#warning,#employement_warning,#education_warning{
+    color:red;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* <----------------------template_2-------------------------> */
+#template_2{
+    width:60%;
+    display: none;
+}
+/* #template_1{
+    display:none;
+} */
+#temp2_1{
+    display:flex;
+}
+#temp2_icons{
+    position: absolute;
+    right:20px;
+    color:black;
+}
+#temp2_icons p i{
+    margin-right: 10px;
+}
+#template2_container .temp1_header{
+    height:100px;
+    width:100%;
+    background-color: rgb(211, 204, 204);
+}
+#temp2_2{
+    margin-top: 30px;
+    padding:20px;
+}
+hr{
+    margin-bottom: 10px;
+}
+h4{
+    margin-top: 20px;
 }
