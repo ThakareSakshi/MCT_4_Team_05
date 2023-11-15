@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DResume Template</title>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Template</title>
     <!-- font awesome cdn link -->
     <link
       rel="stylesheet"
@@ -13,102 +12,89 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
     <header>
-      <img src="" alt="" />
-      <button id="generatePDF">
-        <i class="fa-solid fa-download" onclick="saveDiv()"></i>Dowanload PDF
-      </button>
-    </header>
-    <main id="main_container">
-      <div id="addInfo">
-        <h3>Template Type</h3>
-        <select name="" id="">
-          <option value="Two-Column">Two-Column</option>
-          <option value="">Minimalist</option>
-        </select>
-
-        <h3>Header Color</h3>
-        <input type="color" value="#fffff" style="width: 50px; padding: 0 " id="color1"/>
-        <h3>Header-Text Color</h3>
-        <input type="color" style="width: 50px; padding: 0 " id="color2"/>
-
-        <h3>Personal Details</h3>
-        <input type="text" placeholder="Name" /><br />
-        <input type="text" placeholder="E-mail ID" /><br />
-        <input type="text" placeholder="Phone" /><br />
-        <input type="text" placeholder="City,Country" />
-
-        <h3>Professional Details</h3>
-        <input type="text" placeholder="Wanted Job Title" /><br />
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="6"
-          placeholder="Professional Summary"
-        ></textarea
-        ><br />
-        <input type="text" placeholder="Skills" /><br />
-
-        <button id="add_employment">Add Employment</button><br />
-        <div id="add_employement_info_static"></div>
-
-        <button id="add_project">Add Project</button>
-        <div id="add_project_info_static"></div>
-
-        <h3>Educational Background</h3>
-        <button id="add_education">Add Education</button>
-        <div id="add_education_info_static"></div>
-      </div>
-
-      <section id="template_1">
-        <div id="template1_container">
-          <div id="temp1_1">
-            <div id="temp1_header">
-              <h1></h1>
-            </div>
-            <div id="temp1_content">
-              <h4>SKILLS</h4>
-              <hr />
-              <h4>CONTACT</h4>
-              <hr />
-              <p id="temp1_phone">
-                <i class="fa-solid fa-phone"></i><span></span>
-              </p>
-              <p id="temp1_gmail">
-                <i class="fa-solid fa-envelope"></i><span></span>
-              </p>
-              <p id="temp1_location">
-                <i class="fa-solid fa-location-dot"></i><span></span>
-              </p>
-            </div>
-          </div>
-          <div id="temp1_2">
-            <h4>SUMMARY</h4>
-            <hr>
-            <h4>PROFESSIONAL EXPERIENCE</h4>
-            <hr>
-            <h4>PROJECTS</h4>
-            <hr>
-            <h4>EDUCATION</h4>
-            <hr>
-          </div>
+        <div id="left">
+            <span><i class="fa-solid fa-file"></i> BuildCareer</span>
         </div>
-      </section>
-      <div id="editor"></div>
+        <div id="right">
+            <span class="icon"><i class="fa-solid fa-comment"></i>CONTACT US</span>
+            <span class="icon"><i class="fa-solid fa-user"></i>LOG IN</span>
+        </div>
+    </header>
+    <main>
+        <section class="section1">
+            <div class="section_content">
+                <div class="section1_content">
+                    <h1>The CV that gets the job (done)</h1>
+                    <p>Build a new CV in minutes or
+                    improve your existing one.</p>
+                </div>
+                <a class="section_button" href="./resume_template.html">
+                    <button>Create Your CV</button>
+                </a>
+            </div>
+        </section>
+
+        <section class="section2">
+            <h1>Templates to win recruiters over</h1>
+            <p>Wide selection of designs. Carefully optimised for clarity and impact.
+                One click layouts - no formatting required.</p>
+        </section>
+
+        <section class="section3">
+            <h1>Easiest and most feature-packed
+                CV builder available</h1>
+                <div class="section3_content">
+                    <div class="section3_content_sub">
+                        <img src="./Assets/s3_1.svg" alt="">
+                        <h3>Step-by-step builder</h3>
+                        <p>Easy to use step-by-step builder enables you to create a well-polished, professional CV in minutes. Impress. Save time</p>
+                    </div>
+                    <div class="section3_content_sub">
+                        <img src="./Assets/s3_2.svg" alt="">
+                        <h3>Pre-written content</h3>
+                        <p>Make your CV more sophisticated. Select from thousands of pre-written bullet points for hundreds of jobs and careers. Just click and insert them directly into your CV!</p>
+                    </div>
+                    <div class="section3_content_sub">
+                        <img src="./Assets/s3_3.svg" alt="">
+                        <h3>Expert tips & guidance</h3>
+                        <p>Get detailed CV-building tips and advice every step of the way. CV pro or beginner - we've got you covered.</p>
+                    </div>
+                    <div class="section3_content_sub">
+                        <img src="./Assets/s3_4.svg" alt="">
+                        <h3>Unlimited CVs & downloads</h3>
+                        <p>No limit on the number of CVs you can create. Unlimited printing, sharing and downloading in PDF, Word, plain text or image formats. Limitless creativity.</p>
+                    </div>
+                </div>
+        </section>
+
+        <footer>
+            <div class="footer_content">
+                <div class="footer_sub1">
+                    <p><span><i class="fa-solid fa-file"></i> BuildCareer</span></p>
+                    <div class="chat">
+                        <h6>Chat Hours:</h6>
+                        <p>0008-199-0354</p>
+                        <p>Monday-Sunday 9am-9pm</p>
+                    </div>
+                    <div class="contant">
+                        <h6>Stay in touch with us</h6>
+                        <div class="footer_icon">
+                            <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                    </div>
+                    <img src="./Assets/footer1.png" alt="">
+                </div>
+                <hr>
+                <div class="footer_sub2">
+                    <p>© 2023, Bold Limited. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
     </main>
-
-    <!-- html to pdf cdn link 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script> -->
-
-    <!-- script file for project -->
-    <script src="./script.js"></script>
-  </body>
+</body>
 </html>
