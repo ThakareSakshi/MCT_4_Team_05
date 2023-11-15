@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DResume Template</title>
+
+    <!-- font awesome cdn link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./resume_template.css" />
+
+    <!-- Add html2pdf script link -->
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+  </head>
+  <body>
+    <header>
+      <img src="./Assets/cv-icon.svg" alt="" />
+      <div class="wrapper" onclick="generatePDF()">
+        <a href="#"><i class="fa-solid fa-download"></i><span>Download PDF</span></a>
+      </div>
+    </header>
+    <main id="main_container">
+      <div id="addInfo">
+        <h1>Let's Build Your <span style="color:rgb(245,102,0)">Resume here</span></h1>
+        <h3>Template Type</h3>
+        <select name="" id="">
+          <option value="Two-Column" class="option">Two-Column</option>
+          <option value="Minimalist" class="option">Minimalist</option>
+        </select>
+
+        <h3>Header Color</h3>
+        <input
+          type="color"
+          value="#fffff"
+          style="width: 50px; padding: 0"
+          id="color1"
+        />
+        <h3>Header-Text Color</h3>
+        <input type="color" style="width: 50px; padding: 0" id="color2" />
+
+        <h3>Personal Details</h3>
+        <input type="text" placeholder="Name" /><br />
+        <input type="text" placeholder="E-mail ID" /><br />
+        <input type="text" placeholder="Phone" /><br />
+        <input type="text" placeholder="City,Country" />
+
+        <h3>Professional Details</h3>
+        <input type="text" placeholder="Wanted Job Title" /><br />
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="6"
+          placeholder="Professional Summary"
+        ></textarea
+        ><br />
+        <input type="text" placeholder="Skills" /><br />
+
+        <button id="add_employment" style="margin-bottom: 20px;">Add Employment</button>
+        <div id="add_employement_info_static"></div>
+
+        <button id="add_project">Add Project</button>
+        <div id="add_project_info_static"></div>
+
+        <h3 style="margin-top: 40px;">Educational Background</h3>
+        <button id="add_education">Add Education</button>
+        <div id="add_education_info_static"></div>
+      </div>
+
+      <!--------------------- template 1--------------->
+      <section id="template_1">
+        <div id="template1_container">
+          <div class="temp1_header">
+            <h1></h1>
+            <p class="temp1_header_para"></p>
+          </div>
+          <div class="temp1_main_content">
+            <div id="temp1_1">
+              <div id="temp1_content">
+                <h4>SKILLS</h4>
+                <hr />
+                <div class="temp1_skills"></div>
+                <h4>CONTACT</h4>
+                <hr />
+                <p>
+                  <i class="fa-solid fa-phone"></i
+                  ><span class="temp1_phone"></span>
+                </p>
+                <p>
+                  <i class="fa-solid fa-envelope"></i
+                  ><span class="temp1_gmail"></span>
+                </p>
+                <p>
+                  <i class="fa-solid fa-location-dot"></i
+                  ><span class="temp1_location"></span>
+                </p>
+              </div>
+            </div>
+            <div id="temp1_2">
+              <h4>SUMMARY</h4>
+              <hr />
+              <div class="temp1_2_summary">
+              </div>
+              <h4>PROFESSIONAL EXPERIENCE</h4>
+              <hr />
+              <div class="temp1_2_professional_exp"></div>
+              <h4>PROJECTS</h4>
+              <hr />
+              <div class="temp1_2_project"></div>
+              <h4>EDUCATION</h4>
+              <hr />
+              <div class="temp1_2_education"></div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+
+      <!--------------------- template 2--------------->
+      <section id="template_2">
+        <div id="template2_container">
+          <div id="temp2_1">
+            <div class="temp1_header" id="temp2_header">
+              <h1>Add Title</h1>
+              <p class="temp1_header_para"></p>
+            </div>
+            <div id="temp2_icons">
+              <p>
+                <i class="fa-solid fa-phone"></i
+                ><span class="temp1_phone"></span>
+              </p>
+              <p>
+                <i class="fa-solid fa-envelope"></i
+                ><span class="temp1_gmail"></span>
+              </p>
+              <p>
+                <i class="fa-solid fa-location-dot"></i
+                ><span class="temp1_location"></span>
+              </p>
+            </div>
+          </div>
+          <div id="temp2_2">
+            <h4>SUMMARY</h4>
+            <hr />
+            <div id="temp1_2_summary"></div>
+            <h4>PROFESSIONAL EXPERIENCE</h4>
+            <hr />
+            <div class="temp1_2_professional_exp"></div>
+            <h4>SKILLS</h4>
+            <hr />
+            <div class="temp1_skills"></div>
+            <h4>PROJECTS</h4>
+            <hr />
+            <div class="temp1_2_project"></div>
+            <h4>EDUCATION</h4>
+            <hr />
+            <div class="temp1_2_education"></div>
+          </div>
+        </div>
+      </section>
+
+      <div id="editor"></div>
+    </main>
+
+    <!-- html to pdf cdn link  -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://html2canvas.hertzen.com/dist/html2canvas.js"
+    ></script>
+
+    <!-- script file for project -->
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -18,7 +18,7 @@ let addEmployementInfoStatic = document.querySelector(
   "#add_employement_info_static"
 );
 
-//todo addDataToEmploymentDiv in template-1 div--> template 1
+//todo addDataToEmploymentDiv in template-1 & 2 div--> template 1 &2
 let addEmploymentInfo = document.createElement("div");
 function addDataToEmploymentDiv(
   btn,
@@ -34,28 +34,30 @@ function addDataToEmploymentDiv(
       }
     });
     if (textareaEmployement.value == "" || flag == 0) {
-      warningEmployement.innerText = "Please Fill every detail";
+      warningEmployement.innerText = "Please Fill every detail !";
     } else {
       warningEmployement.innerText = "";
-      let newDiv1 = document.createElement("div");
-      let newDiv2 = document.createElement("div");
+      addEmploymentBtn.id = "add_employment";
       addEmploymentInfo.innerHTML = "";
-      let objOfEmployement = {
-        newDiv1: ".temp1_2_professional_exp",
-        newDiv2: ".temp2_2_professional_exp",
+      let obj = {
+        0: "newDiv1",
+        1: " newDiv2",
       };
-      for (let key in objOfEmployement) {
-        key.innerHTML = `
+      for (let key in obj) {
+        obj[key] = document.createElement("div");
+        obj[key].innerHTML = `
             <div class="employment_temp1_main">
-                <div class="employment_temp1_main1">
+                <div class="employment_temp1_main1 ">
                     <ul><li>${inputsEmployement[2].value} At ${inputsEmployement[3].value}</li></ul>
-                    <p>${inputsEmployement[0].value}-${inputsEmployement[1].value}</p>
+                    <p>${inputsEmployement[0].value}/${inputsEmployement[1].value}</p>
                 </div>
                 <p class="temp1_job_title">${inputsEmployement[2].value}</p>
                 <p class="temp1_emplyoment_description">${textareaEmployement.value}</p>
             </div>
                 `;
-        document.querySelector(key[i]).append(newDiv1);
+        document
+          .querySelectorAll(".temp1_2_professional_exp")
+          [key].append(obj[key]);
       }
     }
   });
@@ -65,16 +67,17 @@ function addDataToEmploymentDiv(
 addEmploymentBtn.addEventListener("click", (e) => {
   e.preventDefault();
   addEmploymentInfo.id = "add_employment_info";
+  addEmploymentBtn.id = "add_employment_after_click";
   addEmploymentInfo.innerHTML = `
-    <h4>Start</h4>
-    <input type="date"><br>
-    <h4>End</h4>
+    <h4 class="start_date">Start</h4>
+    <input type="date" style="margin-bottom='0px'"><br>
+    <h4 class="end_date">End</h4>
     <input type="date" required><br>
     <input type="text" name="" id="" placeholder="Job Title" required><br>
     <input type="text" placeholder="Employer" required><br>
     <textarea name="" id="" cols="30" rows="6" placeholder="Description" required></textarea>
-    <button id="add_emplyoment_data">Add Data</button>
     <p id="employement_warning"></p>
+    <button id="add_emplyoment_data">Add Data</button>
     `;
   addEmployementInfoStatic.append(addEmploymentInfo);
 
@@ -94,7 +97,7 @@ addEmploymentBtn.addEventListener("click", (e) => {
   );
 });
 
-//todo add project data in template-1 div -- > template 1
+//todo add project data in template-1&2 div -- > template 1&2
 let addProjectInfo = document.createElement("div");
 function addDataToProjectDiv(
   btn,
@@ -113,18 +116,27 @@ function addDataToProjectDiv(
       warningProject.innerText = "Please Fill every detail";
     } else {
       warningProject.innerText = "";
-      let newDiv = document.createElement("div");
-      addProjectInfo.innerHTML = "";
-      newDiv.innerHTML = `
-      <div class="project_main">
-          <div class="project_main1">
-              <ul><li>${inputsProject[2].value}</li></ul>
-              <p>${inputsProject[0].value}-${inputsProject[1].value}</p>
-          </div>
-          <p class="temp1_description">${textareaProject.value}</p>
-      </div>
+      addProjectBtn.id = "add_project";
+      let obj = {
+        0: "newDiv1",
+        1: "newDiv2",
+      };
+      for (let key in obj) {
+        obj[key] = document.createElement("div");
+        addProjectInfo.innerHTML = "";
+        obj[key].innerHTML = `
+            <div class="project_main">
+                <div class="employment_temp1_main1">
+                    <ul><li>${inputsProject[2].value}</li></ul>
+                    <p>${inputsProject[0].value}-${inputsProject[1].value}</p>
+                </div>
+                <p class="temp1_emplyoment_description">${textareaProject.value}</p>
+            </div>
           `;
-      document.querySelector("#temp1_2_project").appendChild(newDiv);
+        document
+          .querySelectorAll(".temp1_2_project")
+          [key].appendChild(obj[key]);
+      }
     }
   });
 }
@@ -135,15 +147,16 @@ let addProjectInfoStatic = document.querySelector("#add_project_info_static");
 addProjectBtn.addEventListener("click", (e) => {
   e.preventDefault();
   addProjectInfo.id = "add_project_info";
+  addProjectBtn.id = "add_project_after_click";
   addProjectInfo.innerHTML = `
-    <h4>Start</h4>
+    <h4 class="start_date">Start</h4>
     <input type="date"><br>
-    <h4>End</h4>
+    <h4 class="end_date">End</h4>
     <input type="date"><br>
     <input type="text" name="" id="" placeholder="Project Title"><br>
     <textarea name="" id="" cols="30" rows="6" placeholder="Description"></textarea>
-    <button id="add_project_data">Add Data</button>
     <p id="warning"></p>
+    <button id="add_project_data">Add Data</button>
     `;
   addProjectInfoStatic.append(addProjectInfo);
   let addProjectDataBtn = document.querySelector("#add_project_data");
@@ -160,7 +173,7 @@ addProjectBtn.addEventListener("click", (e) => {
   );
 });
 
-//todo add education data in template-1 div -- > template 1
+//todo add education data in template-1 & 2div -- > template 1&2
 let addEducationInfo = document.createElement("div");
 function addDataToEducationDiv(
   btn,
@@ -179,18 +192,28 @@ function addDataToEducationDiv(
       warningEducation.innerText = "Please Fill every detail";
     } else {
       warningEducation.innerText = "";
-      let newDiv = document.createElement("div");
-      addEducationInfo.innerHTML = "";
-      newDiv.innerHTML = `
+      addEducationBtn.id = "add_education";
+      let obj = {
+        0: "newDiv1",
+        1: "newDiv2",
+      };
+      for (const key in obj) {
+        obj[key] = document.createElement("div");
+        addEducationInfo.innerHTML = "";
+        obj[key].innerHTML = `
       <div class="education_main">
-          <div class="education_main1">
+          <div class="employment_temp1_main1">
               <ul><li>${inputsEducation[2].value}</li></ul>
               <p>${inputsEducation[0].value}-${inputsEducation[1].value}</p>
           </div>
-          <p class="temp1_description">${textAreaEducation.value}</p>
+          <p class="temp1_job_title">${inputsEducation[3].value}</p>
+          <p class="temp1_emplyoment_description">${textAreaEducation.value}</p>
       </div>
           `;
-      document.querySelector("#temp1_2_education").appendChild(newDiv);
+        document
+          .querySelectorAll(".temp1_2_education")
+          [key].appendChild(obj[key]);
+      }
     }
   });
 }
@@ -203,16 +226,17 @@ let addEducationInfoStatic = document.querySelector(
 addEducationBtn.addEventListener("click", (e) => {
   e.preventDefault();
   addEducationInfo.id = "add_education_info";
+  addEducationBtn.id = "add_education_after_click";
   addEducationInfo.innerHTML = `
-    <h4>Start</h4>
+    <h4 class="start_date">Start</h4>
     <input type="date"><br>
-    <h4>End</h4>
+    <h4 class="end_date">End</h4>
     <input type="date"><br>
     <input type="text" name="" id="" placeholder="School/College"><br>
     <input type="text" name="" id="" placeholder="degree"><br>
     <textarea name="" id="" cols="30" rows="6" placeholder="Description"></textarea>
-    <button id="add_education_data">Add Data</button>
     <p id="education_warning"></p>
+    <button id="add_education_data">Add Data</button>
     `;
   addEducationInfoStatic.append(addEducationInfo);
   let addEducationDataBtn = document.querySelector("#add_education_data");
@@ -231,7 +255,7 @@ addEducationBtn.addEventListener("click", (e) => {
   );
 });
 
-//!<------------------------ template-1------------------------------------------->
+//!<------------------------add data contact and header data to templates------------------------------------------->
 
 document.querySelector("#color1").value = "#8B0000";
 document.querySelector("#color2").value = "#ffffff";
@@ -256,14 +280,17 @@ document.addEventListener("input", (e) => {
     document.querySelectorAll(".temp1_gmail")[i].innerText = inputs[3].value;
     document.querySelectorAll(".temp1_location")[i].innerText = inputs[5].value;
     //add summary
-    document.querySelectorAll("#temp1_2_summary")[i].innerText = summary.value;
+    document.querySelectorAll(".temp1_2_summary")[i].innerHTML =`
+      <p>${summary.value}</p>
+    `
+
   }
 
   document.querySelectorAll("#temp2_icons p").forEach((el) => {
     el.style.color = inputs[1].value;
   });
   //add skills
-  let temp1_skill_div = document.querySelectorAll("#temp1_skills");
+  let temp1_skill_div = document.querySelectorAll(".temp1_skills");
   temp1_skill_div.forEach((el) => {
     el.innerText = "";
     let temp1_skill_arr = inputs[7].value.split(",");
@@ -287,19 +314,24 @@ function addSkill(temp1_skill_div, temp1_skill_arr) {
 }
 
 //!download html to pdf
-// let downloadButton = document.querySelector("header button");
-// let pdfContent = document.querySelector("#addInfo");
-// var doc = new jsPDF();
-// var specialElementHandlers = {
-//   "#editor": function (element, renderer) {
-//     return true;
-//   },
-// };
+function generatePDF() {
+  // Use html2pdf to create and download the PDF
+  var element = document.getElementById("template2_container");
 
-// $("#generatePDF").click(function () {
-//   doc.fromHTML($("#template_1").html(), 15, 15, {
-//     elementHandlers: specialElementHandlers,
-//   });
-//   document.write();
-//   doc.save("sample_file.pdf");
-// });
+  html2pdf(element, {
+    margin: 10,
+    filename: "resume.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+  });
+}
+
+{
+  /* <header>
+      <img src="./Assets/cv-icon.svg" alt="" />
+      <div class="wrapper" onclick="generatePDF()">
+        <a href="#"><i class="fa-solid fa-download"></i><span>Hover Me!</span></a>
+      </div>
+    </header> */
+}
