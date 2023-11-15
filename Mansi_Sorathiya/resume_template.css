@@ -195,11 +195,11 @@ select:focus {
 }
 
 /* <--------------#template_1-------------------------> */
-#template_1 {
-  width: 46rem;
+#template_1,#template_2,#template_3{
+  width: 60%;
   padding: 30px 20px;
 }
-#template1_container {
+#template1_container{
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -208,7 +208,7 @@ select:focus {
 }
 #temp1_1 {
   width: 250px;
-  /* height:100%; */
+  height:120vh;
   background-color: rgb(238, 238, 238);
 }
 #temp1_2 {
@@ -280,13 +280,14 @@ select:focus {
     display:flex;
     width:100%;
     justify-content: space-between;
-    margin-left: 12px;
+    
 }
 .employment_temp1_main1 p{
     font-size: 12px;
 }
 .employment_temp1_main1 ul li{
     font-weight:bolder;
+    margin-left: 12px;
 }
 .temp1_job_title{
     font-size: 13px;
@@ -295,25 +296,37 @@ select:focus {
 .temp1_2_summary{
     display:flex;
     flex-wrap: wrap;
-    width:200px;
-    height:100px;
-    border: 2px solid red;
+    width:100%;
+}
+.temp1_2_summary p{
+   word-wrap: break-word;
 }
 /* <----------------------template_2-------------------------> */
-#template_2 {
-  width: 60%;
-  display: none;
+#template2_container,#template3_container{
+    box-shadow: 2px 3px 5px grey;
+    height:100%;
 }
-#temp2_1 {
+#temp2_header h1{
+    font-size: 1.8rem;
+}
+#temp2_header p{
+    font-size: 1rem;
+}
+#temp2_1{
   display: flex;
 }
 #temp2_icons {
   position: absolute;
   right: 20px;
   color: black;
+  padding:18px;
+}
+.temp1_2_professional_exp{
+    width:100%;
 }
 #temp2_icons p i {
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 #template2_container .temp1_header {
   height: 100px;
@@ -329,4 +342,92 @@ hr {
 }
 h4 {
   margin-top: 20px;
+}
+
+/* template-3---------------------------- */
+
+
+/* mediaquery--------------------- */
+/* Media query for small devices */
+@media only screen and (max-width: 600px) {
+    header {
+        padding: 8px 16px;
+    }
+
+    header img {
+        width: 40px;
+    }
+
+    a {
+        width: 100%;
+    }
+
+    #addInfo {
+        width: 100%;
+    }
+
+    #main_container {
+        flex-direction: column;
+    }
+
+    #template_1,
+    #template_2 {
+        width: 100%;
+    }
+
+    #template1_container,
+    #template2_container {
+        width: 100%;
+    }
+
+    #temp1_1 {
+        width: 100%;
+        height: auto;
+    }
+
+    #temp1_2 {
+        width: 100%;
+    }
+}
+
+/* Media query for medium devices */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    header {
+        padding: 12px 24px;
+    }
+
+    header img {
+        width: 50px;
+    }
+
+    a {
+        width: auto;
+    }
+
+    #addInfo {
+        width: 40%;
+    }
+
+    #main_container {
+        flex-direction: row;
+    }
+
+    #template_1,
+    #template_2 {
+        width: 60%;
+    }
+
+    #template1_container,
+    #template2_container {
+        width: 100%;
+    }
+
+    #temp1_1 {
+        width: 100%;
+        height: auto;
+    }
+
+    #temp1_2 {
+        width: 100%;
+    }
 }
