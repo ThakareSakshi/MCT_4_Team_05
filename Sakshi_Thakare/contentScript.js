@@ -6,8 +6,7 @@
     let currentVideoBookmarks = [];
     
 
-    chrome.runtime.onMessage.addListe
-    ner((obj, sender, response) => {
+    chrome.runtime.onMessage.addListener((obj, sender, response) => {
         const { type, value, videoId ,title} = obj;
         // console.log("hello")
 
@@ -28,7 +27,7 @@
  //--------------function to fetch chrome storage-----------------------
  const fetchAllBookmarks=()=>{
     return new Promise((resolve)=>{
-        chrome.storage.sync.get([currentVideo], (obj) => {
+       chrome.storage.sync.get([currentVideo], (obj) => {
             resolve(obj[currentVideo] ? JSON.parse(obj[currentVideo]) : []);
           });
          
@@ -52,7 +51,7 @@ const fetchlistofbookmarks=()=>{
     const newVideoLoaded= async() =>{
           const bookmark_btn_exist=document.getElementsByClassName("bookmark_btn")[0];
           currentVideoBookmarks=await fetchAllBookmarks();
-          lis
+        
 
         //   ----------trying to add all bookmarks-----------------
           

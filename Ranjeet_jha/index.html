@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- -----------headeer nav---------------- -->
+<header>
+    <nav><span>Trello App</span>
+
+    </nav>
+
+</header>
+
+<!-- ----------------main content----------------  -->
+<main>
+
+    <!-- ------------------contain all boards------------------ -->
+ <div class="boardS">
+
+    <div class="Board">
+        <div class="Board-name">
+            <Span>Completed</Span>
+            <span><i class="fa-solid fa-ellipsis"></i></span>
+        </div>
+
+        <div class="to-do-list-container">
+             <div class="All-tasks">
+                <div class="task">
+                    <div class="task-title">task 1</div>
+                    <div class="addMoreDetail">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </div>
+                </div>
+             </div>
+            <button class="add-task">Add Task</button>
+        </div>
+    </div>
+    
+
+ </div>
+
+
+ <div class="displayBoard">
+    <input type="text" class="Projectname" placeholder="project Title">
+    <div><button class="Add-new-board-btn">Add</button>
+        <button class="cancel">cancel</button></div>
+ </div>
+ <!-- -------------------add new board-------------------  -->
+ <div class="addBoard">
+
+    <div class="new-board">
+        Add Board
+    </div>
+        
+ </div>
+
+</main>
+
+    
+<script src="./script.js"></script>
+</body>
+</html>

@@ -1,36 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>code editor</title>
-   <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"
+      integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"
+      integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- <script type="text/javascript" src="https://codemirror.net/lib/codemirror.js"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/night.min.css"
+      integrity="sha512-pacIk0A3c7l/KD0Belz3UTv/3cE2R57Se/sxKFG/4aJklknJisL7uY5rgMs/ReMOGUjVC8EnSLgjlPxtXN2atA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/paraiso-dark.min.css"
+      integrity="sha512-5hz9PNWbmgNiQUEtQyBS0vOV6FhNiLSyLBTDPe8W/eOUQOCDqbeKk1yOcJqOlSHyk5GtcvkEUOJ+yPVchC9b1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/xq-dark.min.css"
+      integrity="sha512-GVsNXod1xxjlHCGyiI01Fo5uOAN80LPqWWnDFS37p+y8/FUqU8jSnu1YMD88zh2FZweLCwedJ/4QqNcqVdfMyg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/3024-day.min.css"
+      integrity="sha512-18oLgbbfP5aJEwUUaEBLD/e5HnJtTuPOmdevOgMWL8wdGn6zNVLY+yAgOupSfrbdT174IRJDdak3XeBqdYy7Jw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/html-hint.min.js"
+      integrity="sha512-oxBKDzXElkyh3mQC/bKA/se1Stg1Q6fm7jz7PPY2kL01jRHQ64IwjpZVsuZojcaj5g8eKSMY9UJamtB1QR7Dmw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/css-hint.min.js"
+      integrity="sha512-1BD3lo262s+DtDFoeD8+ssEL1zVJU8SHWWMtUyxfLqMV/jQDEnyQlS/CL3mD1kkLSv2hhYq1sdcA/zAPDz4JVA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://codemirror.net/mode/xml/xml.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://codemirror.net/mode/css/css.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://codemirror.net/mode/javascript/javascript.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <style></style>
-</head>
-<body>
-    
-  <nav>
-     <span class="red"></span>
-     <span class="yellow"></span>
-     <span class="green"></span>
+  </head>
+  <body>
+    <!-- ----------------------navbar with text ------------------------- -->
+
+    <nav>
+      <span class="red"></span>
+      <span class="yellow"></span>
+      <span class="green"></span>
       <span>Code Editor</span>
-  </nav>
-    <section class="wrapper-code-editor">
-        <section class="html-code-editor-container">
-            <textarea name="" id="html-code" cols="30" rows="10" placeholder="enter html code here ...."></textarea>
+    </nav>
+
+   <!-- --------------------- main section starts here---------------------- -->
+    <section class="main">
+
+
+      <!-- ---------------this section contains all code editors----------------------- -->
+      <section class="wrapper-code-editor">
+        <!-- -----------------html code editor------------------ -->
+        <section class="html-code-editor-container editor">
+          <div class="header">
+            <div><img src="./html-5.png" alt="" /><span> HTML</span></div>
+            <div>
+              <button class="clear clear0">clear</button
+              ><button class="setting setting0">
+                <i class="fas fa-sun"></i>
+              </button>
+            </div>
+          </div>
+          <!-- ----------------------html code will be added here-------------------- -->
+          <div name="" id="html-code"></div>
+          <div class="copy-html-code"> <i class="fa fa-link" aria-hidden="true"></i> copy Html code</div>
         </section>
 
-        <section class="css-code-editor-container">
-            <textarea name="" id="css-code" cols="30" rows="10" placeholder="enter css code here ...."></textarea>
-        </section>
-        <section class="js-code-editor-container">
-            <textarea name="" id="js-code" cols="30" rows="10" placeholder="enter js code here ...."></textarea>
+        <!-- ---------------------css code editor------------------- -->
+        <section class="css-code-editor-container editor">
+          <div class="header">
+            <div><img src="./css.png" alt="" /><span>css</span></div>
+            <div>
+              <button class="clear1 clear">clear</button
+              ><button class="setting setting1"><i class="fas fa-sun"></i></button>
+            </div>
+          </div>
+
+          <!-- -----------------------------css code will be added here------------------ -->
+          <div id="css-code"></div>
+          <div class="copy-css-code"> <i class="fa fa-link" aria-hidden="true"></i> copy css code</div>
         </section>
 
+        <!-- --------------------js code editor------------------ -->
+        <section class="js-code-editor-container editor">
+          <div class="header">
+            <div><img src="./js.png" alt="" /><span>js</span></div>
+            <div>
+              <button class="clear clear2">clear</button
+              ><button class="setting setting2"><i class="fas fa-sun"></i></button>
+            </div>
+          </div>
+
+          <!-- --------------------------js code will be added here-------------------- -->
+          <div id="js-code"></div>
+          <div class="copy-js-code"> <i class="fa fa-link" aria-hidden="true"></i> copy js code</div>
+        </section>
+      </section>
+
+
+      
+<!-- ------------privew---------------  -->
+      <section class="result-display-container">
+        <div>PREVIEW</div>
+
+        <!-- --------------------out will be displayed in this frame------------------------- -->
+        <iframe id="#" frameborder="0" class="output"></iframe>
+      </section>
     </section>
-    <section class="result-display-container">
-          <iframe id="#" frameborder="0"></iframe>
-    </section>
-    
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>

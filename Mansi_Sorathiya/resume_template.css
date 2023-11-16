@@ -303,6 +303,7 @@ select:focus {
 .temp1_2_summary p{
    word-wrap: break-word;
 }
+
 /* <----------------------template_2-------------------------> */
 #template2_container,#template3_container{
     box-shadow: 2px 3px 5px grey;

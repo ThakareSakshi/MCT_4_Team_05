@@ -66,6 +66,10 @@ textarea{
     width: 100%;
     font-family: 'Roboto Mono', monospace;
     font-size: 18px;
+    position: absolute;
+    z-index: 20;
+    opacity: 0;
+    top:102px;
     /* padding:15px; */
     /* position: absolute; */
     color:white;

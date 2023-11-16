@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=VT323&display=swap');
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background:url("./background-img.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    flex-direction: column;
+    color: white;
+  }
+  
+  .title {
+    margin: 20px;
+    font-family: 'VT323', monospace;
+    color:rgb(117, 55, 24);
+    text-shadow:1px 1px 2px #f0f6f0;
+    
+  }
+  
+  .subtext {
+    color: rgb(72, 5, 5);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .board {
+    display: inline-grid;
+    padding: 10px;
+    grid-template-columns: repeat(var(--size), 60px);
+    grid-template-rows: repeat(var(--size), 60px);
+    gap: 4px;
+    background-color: #ce6f43;
+  }
+  
+  .board > * {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid #b1af45;
+    user-select: none;
+  }
+  
+  .board > [data-status="hidden"] {
+    /* background-color: rgb(4, 189, 28); */
+    background: radial-gradient(#b1af45,#58692C);
+    cursor: pointer;
+  }
+  
+  .board > [data-status="mine"] {
+    /* background-color: rgb(63, 14, 14); */
+    background: radial-gradient(rgb(255, 60, 0),rgb(72, 5, 5));
+    color:white;
+    position: relative;
+  }
+  .board > [data-status="mine"]::after{
+    content:"";
+    background-image: url("./boom.gif");
+    /* background-color: aqua; */
+    position: absolute;
+    top:0;
+    left:0;
+    height:50px;
+    width: 50px;
+    object-fit: cover;
+
+
+  }
+
+  
+  .board > [data-status="number"] {
+    background-color: none;
+  }
+  
+  .board > [data-status="marked"] {
+    background-color: yellow;
+  }
+
+  .try_again_btn{
+    background-color: rgb(72, 5, 5);
+    color:white;
+    padding:10px 20px;
+    margin:10px;
+  }
+

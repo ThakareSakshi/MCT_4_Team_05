@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+  
+</head>
+<body>
+
+  <!-- --------------name of game----------------------  -->
+  <h3 class="title">Minesweeper</h3>
+
+  <!-- -------------subtext to display mine lefts and win or lose status-------------------- -->
+  <div class="subtext">
+    Mines Left: <span data-mine-count></span>
+  </div>
+  <div class="tryagain"><button class="try_again_btn" onclick="window.location.reload(true)">Try Again</button></div>
+
+  <!-- -------------------mine board---------------------------- -->
+  <div class="board"></div>
+  <script type="module" src="./minsweeper.js"></script>
+  <script  type="module" src="./script.js"></script>
+  
+
+  
+</body>
+</html>
