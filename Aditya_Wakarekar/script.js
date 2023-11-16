@@ -63,7 +63,7 @@ try_again_after_result.addEventListener("click", () => {
 // --------------timer--------------------------------
 let istyping=true;
 textbox.focus();
-para.addEventListener("click", () => {
+textbox.addEventListener("click", () => {
   let timer = document.querySelector("#remaining-time");
   if(!istyping && time!=0) return;
   let remaining_time = setInterval(() => {
@@ -119,7 +119,9 @@ function startTyping(e) {
   textbox.addEventListener("click", () => textbox.focus());
   let originalChar=para.querySelectorAll("span");
   if(e.data==null){
+   if(index>0){
     index--;
+   }
     updateValues();
     originalChar[index].classList.remove("correct")
     originalChar[index].classList.remove("incorrect")
@@ -190,7 +192,7 @@ function resetAll() {
   para.innerHTML = "";
   index=0;
   textbox.value=0;
-  
+  updateValues()
 }
 
 let buttons=document.querySelectorAll("button");

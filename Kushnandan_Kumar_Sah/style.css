@@ -60,6 +60,7 @@ iframe{
     width: 32vh;
     flex-grow: 1;
     background-color:rgb(33, 32, 32);
+    position:relative;
     /* background-color: grey; */
 
 }
@@ -119,6 +120,18 @@ nav{
 display: flex;
 gap:10px;
 padding-top:10px
+}
+
+.copy-html-code,.copy-css-code,.copy-js-code{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    color:white;
+    padding-bottom: 10px;
+    position: absolute;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.296);
+    cursor: pointer;
 }
 /* @media  (max-width:800px) {
    #html-code,#css-code,#js-code{

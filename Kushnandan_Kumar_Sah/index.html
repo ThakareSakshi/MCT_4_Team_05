@@ -82,13 +82,20 @@
     <style></style>
   </head>
   <body>
+    <!-- ----------------------navbar with text ------------------------- -->
+
     <nav>
       <span class="red"></span>
       <span class="yellow"></span>
       <span class="green"></span>
       <span>Code Editor</span>
     </nav>
+
+   <!-- --------------------- main section starts here---------------------- -->
     <section class="main">
+
+
+      <!-- ---------------this section contains all code editors----------------------- -->
       <section class="wrapper-code-editor">
         <!-- -----------------html code editor------------------ -->
         <section class="html-code-editor-container editor">
@@ -101,7 +108,9 @@
               </button>
             </div>
           </div>
+          <!-- ----------------------html code will be added here-------------------- -->
           <div name="" id="html-code"></div>
+          <div class="copy-html-code"> <i class="fa fa-link" aria-hidden="true"></i> copy Html code</div>
         </section>
 
         <!-- ---------------------css code editor------------------- -->
@@ -113,7 +122,10 @@
               ><button class="setting setting1"><i class="fas fa-sun"></i></button>
             </div>
           </div>
+
+          <!-- -----------------------------css code will be added here------------------ -->
           <div id="css-code"></div>
+          <div class="copy-css-code"> <i class="fa fa-link" aria-hidden="true"></i> copy css code</div>
         </section>
 
         <!-- --------------------js code editor------------------ -->
@@ -125,15 +137,23 @@
               ><button class="setting setting2"><i class="fas fa-sun"></i></button>
             </div>
           </div>
+
+          <!-- --------------------------js code will be added here-------------------- -->
           <div id="js-code"></div>
+          <div class="copy-js-code"> <i class="fa fa-link" aria-hidden="true"></i> copy js code</div>
         </section>
       </section>
-      <script src="./script.js"></script>
 
+
+      
+<!-- ------------privew---------------  -->
       <section class="result-display-container">
         <div>PREVIEW</div>
+
+        <!-- --------------------out will be displayed in this frame------------------------- -->
         <iframe id="#" frameborder="0" class="output"></iframe>
       </section>
     </section>
+    <script src="./script.js"></script>
   </body>
 </html>

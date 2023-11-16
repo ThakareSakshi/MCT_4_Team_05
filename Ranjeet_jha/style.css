@@ -1,0 +1,143 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9oIpDsdnQgV3bTmFrm2cVX0OwZI2kKmuEEQ&usqp=CAU");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif;
+}
+nav{
+    font-size: 30px;
+    color:#17394d;
+    font-weight: 800;
+}
+main{
+    
+    height: 100vh;
+    width: 100vw;
+    /* overflow: scroll; */
+    
+    padding:40px;
+    display: flex;
+    gap:20px;
+}
+.boardS{
+    display: flex;
+    /* padding:20px; */
+    gap:20px;
+    height: fit-content;
+    flex-wrap: wrap;
+
+
+}
+.Board{
+    padding:10px;
+    background-color: rgba(255, 255, 255, .5);
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+}
+.Board-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size:16px ;
+    font-weight: 700;
+    color:#17394d;
+    width: 100%;
+    padding: 10px;
+}
+.to-do-list-container{
+    background-color: rgb(247, 247, 247);
+    width: 100%;
+    /* border-radius: 10px; */
+    padding:8px;
+    gap:10px;
+    display: flex;
+    flex-direction: column;
+
+}
+.task{
+    background-color: white;
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+    color:#17394d;
+    box-shadow: 2px 2px 4px rgb(202, 200, 200);
+    border-radius: 12px;
+    gap:12px;
+}
+.task-title{
+    font-size:16px ;
+    font-weight: 700;
+    color:#17394d;
+}
+.add-task{
+    width: 100%;
+    padding:20px;
+    border-radius: 12px;
+    border:none;
+    outline: none;
+    background: white;
+    box-shadow: 1px 1px 4px rgb(197, 197, 197);
+}
+.new-board{
+    background-color: white;
+    padding:15px;
+    color:#17394d;
+    box-shadow: 2px 2px 4px rgb(202, 200, 200);
+    border-radius: 12px;
+    gap:12px;
+    width: 300px;
+    text-align: center;
+}
+.displayBoard{
+   background: white;
+   height:100px;
+   background-color: white;
+   padding:15px;
+   color:#17394d;
+   box-shadow: 2px 2px 4px rgb(202, 200, 200);
+   border-radius: 12px;
+   gap:12px;
+   width: 300px;
+   text-align: center;
+   display: none;
+}
+
+.Projectname{
+    padding:10px;
+    border-radius: 5px;
+    width: 100%;
+    outline-color: lightseagreen;
+}
+.Add-new-board-btn{
+    padding:10px;
+    border:none;
+    background-color: lightseagreen;
+    color:white;
+    border-radius: 5px;
+    margin:5px;
+    cursor: pointer;
+}
+.cancel{
+    padding:10px;
+    border:none;
+    background-color: rgb(121, 121, 121);
+    color:white;
+    border-radius: 5px;
+    margin:5px;
+    cursor: pointer;
+   
+
+}
+
+
+
+

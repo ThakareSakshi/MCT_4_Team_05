@@ -1,3 +1,5 @@
+// -----------------------codemirrors html code editor with theme, and linenumbers ------------------------------
+
 let html_code=CodeMirror(document.querySelector("#html-code"),{
     lineNumbers:true,
     tabSize:4,
@@ -7,6 +9,9 @@ let html_code=CodeMirror(document.querySelector("#html-code"),{
 
 
 })
+
+// -----------------------codemirrors css code editor ------------------------------
+
 let css_code=CodeMirror(document.querySelector("#css-code"),{
     lineNumbers:true,
     tabSize:4,
@@ -15,6 +20,8 @@ let css_code=CodeMirror(document.querySelector("#css-code"),{
 
 
 })
+// -----------------------codemirrors js code editor with theme, and linenumbers ------------------------------
+
 let js_code=CodeMirror(document.querySelector("#js-code"),{
     lineNumbers:true,
     tabSize:4,
@@ -23,7 +30,17 @@ let js_code=CodeMirror(document.querySelector("#js-code"),{
 
 
 })
-document.addEventListener("input",()=>{
+html_code.setValue(window.localStorage.getItem(`html-code`))
+css_code.setValue(window.localStorage.getItem(`css-code`))
+
+js_code.setValue(window.localStorage.getItem(`js-code`))
+
+displayOutput();
+
+
+
+
+function displayOutput(){
     let html_editor_code=html_code.getValue();
     let css_editor_code="<style>"+css_code.getValue()+"</style>";
     let js_editor_code="<scri"+"pt>"+js_code.getValue()+"</scri"+"pt>";
@@ -31,7 +48,22 @@ document.addEventListener("input",()=>{
     output_window.open();
     output_window.write(html_editor_code+css_editor_code+js_editor_code);
     output_window.close();
+    //  -------------------------------storing code into local storage-----------------------------
+    window.localStorage.setItem("html-code",`${html_code.getValue()}`)
+    window.localStorage.setItem("css-code",`${css_code.getValue()}`)
+    window.localStorage.setItem("js-code",`${js_code.getValue()}`)
+
+}
+
+// -------------------- when any input is added to code editor-------------------------
+document.addEventListener("input",()=>{
+    displayOutput();
 })
+
+
+
+
+//---------------------event listner to clear all code in editor-----------------------------
 document.querySelector(".clear0").addEventListener("click",()=>{
     html_code.setValue("");
  })
@@ -43,7 +75,7 @@ document.querySelector(".clear2").addEventListener("click",()=>{
     js_code.setValue("");
  })
 
-
+//---------------------setting theme of editors--------------------------------------
  let setting0=document.querySelector(".setting0")
  let setting1=document.querySelector(".setting1")
  let setting2=document.querySelector(".setting2")
@@ -85,4 +117,38 @@ document.querySelector(".clear2").addEventListener("click",()=>{
     }
    
     console.log(html_code)
+ })
+
+
+ //--------------------------cpoy code to click
+ document.querySelector(".copy-html-code").addEventListener("click",(e)=>{
+    if(e.which==1){
+        e.target.style.color="yellow";
+        setTimeout(() => {
+            e.target.style.color="white";
+        },250);
+        navigator.clipboard.writeText(html_code.getValue());
+    }
+    
+ })
+ document.querySelector(".copy-css-code").addEventListener("click",(e)=>{
+    if(e.which==1){
+        e.target.style.color="yellow";
+        setTimeout(() => {
+            e.target.style.color="white";
+        },250);
+        navigator.clipboard.writeText(css_code.getValue());
+    }
+    
+ })
+
+ document.querySelector(".copy-js-code").addEventListener("click",(e)=>{
+    if(e.which==1){
+        e.target.style.color="yellow";
+        setTimeout(() => {
+            e.target.style.color="white";
+        },250);
+        navigator.clipboard.writeText(js_code.getValue());
+    }
+    
  })
