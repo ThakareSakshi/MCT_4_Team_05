@@ -1,13 +1,16 @@
 // console.log("mansi");
 //!<----------------select template--------------------------->
 let selectTemplate = document.querySelector("select");
+const templateIds = ["template_1", "template_2","template_3"];
+const optionList = ["Two-Column","Minimalist","Simple"]
 selectTemplate.addEventListener("input", (e) => {
-  if (selectTemplate.value == "Two-Column") {
-    document.querySelector("#template_1").style.display = "block";
-    document.querySelector("#template_2").style.display = "none";
-  } else {
-    document.querySelector("#template_2").style.display = "block";
-    document.querySelector("#template_1").style.display = "none";
+  for (let i=0; i<2; i++) {
+    const templateElement = document.querySelector(`#${templateIds[i]}`);
+    if (selectTemplate.value == optionList[i]) {
+      templateElement.style.display = "block";
+    } else {
+      templateElement.style.display = "none";
+    }
   }
 });
 
@@ -41,13 +44,14 @@ function addDataToEmploymentDiv(
       addEmploymentInfo.innerHTML = "";
       let obj = {
         0: "newDiv1",
-        1: " newDiv2",
+        1: "newDiv2",
+        2:"newDiv3",
       };
       for (let key in obj) {
         obj[key] = document.createElement("div");
         obj[key].innerHTML = `
             <div class="employment_temp1_main">
-                <div class="employment_temp1_main1 ">
+                <div class="employment_temp1_main1">
                     <ul><li>${inputsEmployement[2].value} At ${inputsEmployement[3].value}</li></ul>
                     <p>${inputsEmployement[0].value}/${inputsEmployement[1].value}</p>
                 </div>
@@ -120,6 +124,7 @@ function addDataToProjectDiv(
       let obj = {
         0: "newDiv1",
         1: "newDiv2",
+        2:"newDiv3",
       };
       for (let key in obj) {
         obj[key] = document.createElement("div");
@@ -128,7 +133,7 @@ function addDataToProjectDiv(
             <div class="project_main">
                 <div class="employment_temp1_main1">
                     <ul><li>${inputsProject[2].value}</li></ul>
-                    <p>${inputsProject[0].value}-${inputsProject[1].value}</p>
+                    <p>${inputsProject[0].value}/${inputsProject[1].value}</p>
                 </div>
                 <p class="temp1_emplyoment_description">${textareaProject.value}</p>
             </div>
@@ -196,6 +201,7 @@ function addDataToEducationDiv(
       let obj = {
         0: "newDiv1",
         1: "newDiv2",
+        2: "newDiv3",
       };
       for (const key in obj) {
         obj[key] = document.createElement("div");
@@ -204,7 +210,7 @@ function addDataToEducationDiv(
       <div class="education_main">
           <div class="employment_temp1_main1">
               <ul><li>${inputsEducation[2].value}</li></ul>
-              <p>${inputsEducation[0].value}-${inputsEducation[1].value}</p>
+              <p>${inputsEducation[0].value}/${inputsEducation[1].value}</p>
           </div>
           <p class="temp1_job_title">${inputsEducation[3].value}</p>
           <p class="temp1_emplyoment_description">${textAreaEducation.value}</p>
@@ -265,7 +271,7 @@ let summary = document.querySelector("textarea");
 // console.log(descriptions);
 document.addEventListener("input", (e) => {
   //add contact info to template-1 & template-2
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 3; i++) {
     document.querySelectorAll(".temp1_header")[i].style.backgroundColor =
       inputs[0].value;
     document.querySelectorAll(".temp1_header h1")[i].style.color =
@@ -314,10 +320,17 @@ function addSkill(temp1_skill_div, temp1_skill_arr) {
 }
 
 //!download html to pdf
+let element = "";
+let templateIdOfContainers = ["template1_container","template2_container","template3_container"]
 function generatePDF() {
   // Use html2pdf to create and download the PDF
-  var element = document.getElementById("template2_container");
-
+  selectTemplate.addEventListener("input", (e) => {
+    for (let i =0; i<2; i++) {
+      if (selectTemplate.value === optionList[i]) {
+        element = document.getElementById( templateIdOfContainers[i]);
+      } 
+    }
+  });
   html2pdf(element, {
     margin: 10,
     filename: "resume.pdf",
@@ -327,11 +340,3 @@ function generatePDF() {
   });
 }
 
-{
-  /* <header>
-      <img src="./Assets/cv-icon.svg" alt="" />
-      <div class="wrapper" onclick="generatePDF()">
-        <a href="#"><i class="fa-solid fa-download"></i><span>Hover Me!</span></a>
-      </div>
-    </header> */
-}
