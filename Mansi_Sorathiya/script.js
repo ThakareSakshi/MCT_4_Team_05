@@ -1,13 +1,26 @@
-// console.log("mansi");
+//!<--------------default value for header of template------------------------------------>
+document.querySelectorAll(".tem1_header").forEach((el)=>{
+  el.innerText = "FIRST NAME SURNAME";
+}) 
+
+
 //!<----------------select template--------------------------->
 let selectTemplate = document.querySelector("select");
-const templateIds = ["template_1", "template_2","template_3"];
-const optionList = ["Two-Column","Minimalist","Simple"]
+const templateIds = ["template_1", "template_2", "template_3"];
+const optionList = ["Two-Column", "Minimalist", "Simple"];
+const color1 = ["#8B0000", "#D3D3D3", "#ffffff"];
+const color2 = ["#ffffff", "#000000", "#000000"];
+// header and header text color
+document.querySelector("#color1").value = "#8B0000";
+document.querySelector("#color2").value = "#ffffff";
+
 selectTemplate.addEventListener("input", (e) => {
-  for (let i=0; i<2; i++) {
+  for (let i = 0; i <= 2; i++) {
     const templateElement = document.querySelector(`#${templateIds[i]}`);
     if (selectTemplate.value == optionList[i]) {
       templateElement.style.display = "block";
+      document.querySelector("#color1").value = color1[i];
+      document.querySelector("#color2").value = color2[i];
     } else {
       templateElement.style.display = "none";
     }
@@ -45,7 +58,7 @@ function addDataToEmploymentDiv(
       let obj = {
         0: "newDiv1",
         1: "newDiv2",
-        2:"newDiv3",
+        2: "newDiv3",
       };
       for (let key in obj) {
         obj[key] = document.createElement("div");
@@ -124,7 +137,7 @@ function addDataToProjectDiv(
       let obj = {
         0: "newDiv1",
         1: "newDiv2",
-        2:"newDiv3",
+        2: "newDiv3",
       };
       for (let key in obj) {
         obj[key] = document.createElement("div");
@@ -261,10 +274,7 @@ addEducationBtn.addEventListener("click", (e) => {
   );
 });
 
-//!<------------------------add data contact and header data to templates------------------------------------------->
-
-document.querySelector("#color1").value = "#8B0000";
-document.querySelector("#color2").value = "#ffffff";
+//!<------------------------add contact data and header data to templates------------------------------------------->
 let inputs = document.querySelectorAll("input");
 let summary = document.querySelector("textarea");
 // console.log(inputs);
@@ -286,10 +296,9 @@ document.addEventListener("input", (e) => {
     document.querySelectorAll(".temp1_gmail")[i].innerText = inputs[3].value;
     document.querySelectorAll(".temp1_location")[i].innerText = inputs[5].value;
     //add summary
-    document.querySelectorAll(".temp1_2_summary")[i].innerHTML =`
+    document.querySelectorAll(".temp1_2_summary")[i].innerHTML = `
       <p>${summary.value}</p>
-    `
-
+    `;
   }
 
   document.querySelectorAll("#temp2_icons p").forEach((el) => {
@@ -320,17 +329,23 @@ function addSkill(temp1_skill_div, temp1_skill_arr) {
 }
 
 //!download html to pdf
-let element = "";
-let templateIdOfContainers = ["template1_container","template2_container","template3_container"]
-function generatePDF() {
-  // Use html2pdf to create and download the PDF
-  selectTemplate.addEventListener("input", (e) => {
-    for (let i =0; i<2; i++) {
-      if (selectTemplate.value === optionList[i]) {
-        element = document.getElementById( templateIdOfContainers[i]);
-      } 
+let element = document.getElementById("template1_container");
+let templateIdOfContainers = [
+  "template1_container",
+  "template2_container",
+  "template3_container",
+];
+selectTemplate.addEventListener("input", (e) => {
+  console.log(selectTemplate.value);
+  for (let i = 0; i <= 2; i++) {
+    if (selectTemplate.value == optionList[i]) {
+      element = document.getElementById(templateIdOfContainers[i]);
     }
-  });
+  }
+});
+console.log(element);
+function generatePDF() {
+  // Use html2pdf to create and download the PDf
   html2pdf(element, {
     margin: 10,
     filename: "resume.pdf",
@@ -340,3 +355,20 @@ function generatePDF() {
   });
 }
 
+// carasoul for home page
+// const carousel = document.querySelector('.carousel');
+//   let counter = 1;
+
+//   setInterval(() => {
+//     carousel.style.transition = 'transform 0.5s ease-in-out';
+//     carousel.style.transform = `translateX(${-counter * 100}%)`;
+//     counter++;
+
+//     if (counter === 6) {
+//       setTimeout(() => {
+//         carousel.style.transition = 'none';
+//         carousel.style.transform = 'translateX(0)';
+//         counter = 1;
+//       }, 500);
+//     }
+//   }, 3000);
