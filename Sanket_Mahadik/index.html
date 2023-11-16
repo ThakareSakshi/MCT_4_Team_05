@@ -2,15 +2,201 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <div class="container">
 
-    <script src="./script.js"></script>
+
+        <!--  Main Form  -->
+
+        <form class="mainForm" id="downloadPDF">
+            <div class="row">
+
+
+                <!-- top section date , invoice no  -->
+
+                <div class="card1" id="card1">
+                    <div class="dateInvoice">
+                        <div class="dateSection">
+                            <div class="currentDate">
+                                <h4 id="curnDate">Current Date</h4>
+                            </div>
+                            <div class="dueDate bold">
+                                <label for="datePicker">Due Date: </label>
+                                <input type="date" id="datePicker" name="datePicker" />
+                            </div>
+                        </div>
+                        <div class="invoiceNumber">
+                            <div class="invoiceNumber-Section margintop bold">
+                                <span class="invoice-number-text text-bold">
+                                    Invoice Number: 
+                                </span>
+                                <input name="invoiceNumber" class="invoice_number" value="1" min="1" type="number" class="form-control" style="max-width: 70px;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="margin-hr">
+                    <hr class="margin-hr">
+
+                    <!-- bill owner and custmer details -->
+
+                    <div class="billSection">
+                        <div class="billTo">
+                            <h4>Bill To:</h4>
+                            <input type="text" placeholder="Who is this invoice to?" id="billToName" />
+                            <input type="text" placeholder="Email Address" id="billToEmail" />
+                            <input type="text" placeholder="Billing Address" id="billToAddress" />
+                        </div>
+                        <div class="billFrom">
+                            <h4>Bill From:</h4>
+                            <input type="text" placeholder="Who is this invoice From?" id="billFromName" />
+                            <input type="text" placeholder="Email Address" id="billFromEmail" />
+                            <input type="text" placeholder="Billing Address" id="billFromAddress" />
+                        </div>
+                    </div>
+
+
+                    <hr class="margin-hr">
+                    <hr class="margin-hr">
+
+                    <!-- bill details -->
+                    <div class="section">
+
+
+                        <h2>Bill Details</h2>
+                        <table id="billTable">
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <button onclick="addItem()">Add Item</button>
+                    </div>
+
+                    <!--  Total Amount Cal -->
+                    <div class="section">
+                        <h2>Total</h2>
+
+                        <div class="cart_Section mt-4">
+
+                            <div class="col-cart">
+                                <div class="cart-content">
+                                    <span class="text-bold">Subtotal:</span>
+                                    <span class="total" id="total_amount">
+                                        <span class="currency_change">$</span>
+                                    <span id="amount">1.00</span>
+                                    </span>
+                                </div>
+                                <div class="cart-content mt-2">
+                                    <span class="text-bold">Discount:</span>
+                                    <span class="discount-given">
+                                        <span class="DiscountInPercent">(0%)</span>
+                                    <span class="currency_change">$</span>
+                                    <span class="discountpercent">0.00</span>
+                                    </span>
+                                </div>
+                                <div class="cart-content mt-2">
+                                    <span class="text-bold">Tax:</span>
+                                    <span class="tax-applied">
+                                        <span class="taxInPercent">(0%)</span>
+                                    <span class="currency_change">$</span>
+                                    <span class="taxPercent">0.00</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <p>Total Items: <span id="totalItems">0</span></p>
+                            <hr class="margin-hr">
+                            <p class="bold">Total Amount: $<span id="totalAmount">0</span></p>
+                            <hr class="my-4">
+                        </div>
+                    </div>
+
+                    <!-- temp -->
+
+
+                    <!-- temp -->
+                    <!-- Add notes -->
+                    <div class="section">
+                        <h2>Notes</h2>
+                        <textarea id="notes"></textarea>
+                    </div>
+                </div>
+
+                <div class="card2">
+
+                    <div class="section2">
+                        <button class="reviewInvoice" onclick="reviewInvoice(event)" id="reviewInvoiceButton">
+                            Review Invoice
+                          </button>
+                        <div>
+                            <hr class="mt-4 mb-3">
+                        </div>
+                        <div class="mb-3">
+                            <label class="text-bold form-label">Currency:</label>
+                            <select aria-label="Change Currency" class="btn btn-light my-1 form-select currency">
+                        <option value="₹">INR (Indian Rupee)</option>
+                        <option value="$">USD (United States Dollar)</option>
+                        <option value="£">GBP (British Pound Sterling)</option>
+                        <option value="¥">JPY (Japanese Yen)</option>
+                        <option value="$">CAD (Canadian Dollar)</option>
+                        <option value="$">AUD (Australian Dollar)</option>
+                        <option value="$">SGD (Signapore Dollar)</option>
+                        <option value="¥">CNY (Chinese Renminbi)</option>
+                        <option value="₿">BTC (Bitcoin)</option>
+                    </select>
+                        </div>
+
+                        <div class="my-3">
+                            <label class="text-bold form-label">Tax rate:</label>
+                            <div class="my-1 flex-nowrap input-group">
+                                <input name="taxRate" id="taxRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="tax-rate form-control" value="">
+                                <span class="text-bold input-group-text">%</span>
+                            </div>
+                        </div>
+
+                        <div class="my-3">
+                            <label class="text-bold form-label">Discount rate:</label>
+                            <div class="my-1 flex-nowrap input-group">
+                                <input name="discountRate" id="discountRate" placeholder="0.0" min="0.00" step="0.01" max="100.00" type="number" class="discount-rate form-control" value="">
+                                <span class="text-bold input-group-text">%</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Hover card  -->
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Invoice Options</h2>
+            <button onclick="viewBill()">Show Bill</button>
+            <button onclick="downloadBill()">PDF Download</button>
+            <div id="billContent" style="display: none"></div>
+            <div id="downloadContent" style="display: none"></div>
+        </div>
+    </div>
+
+
+    <!--  JavaScript  -->
+
+    <script src="script.js"></script>
 </body>
 
 </html>
