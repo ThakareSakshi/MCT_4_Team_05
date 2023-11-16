@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arial", sans-serif;
+}
+#template_1,#template_2,#addInfo{
+    font-family: "Arial", sans-serif;
 }
 /* <---------------Header-------------------------------> */
 header h1 {
@@ -345,7 +347,56 @@ h4 {
 }
 
 /* template-3---------------------------- */
-
+#template_3{
+    font-family: 'Playfair Display', serif;
+}
+  /* icons */
+ #temp3_icons{
+    display:flex;
+    width:100%;
+    gap:20px;
+    justify-content: space-between;
+ }
+ #temp3_icons p i{
+    margin-right: 10px;
+ } 
+ #template3_container{
+    padding:30px;
+ }
+ #tem3_header{
+    background-color:transparent;
+    width:100%;
+    text-align: center;
+    height:60px;
+ }
+ #tem3_header h1{
+    font-size: 2rem;
+ }
+ #temp3_line2{
+    border:3px solid black;
+    margin-top: -8px;
+ }
+ .temp3_summary{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 20px;
+ }
+ .line{
+    width:50%;
+    border:1.5px solid black;
+    height:0px;
+ }
+.temp3_summary h4{
+    margin: 0 20px;
+}
+#template_2,#template_3{
+    display:none;
+}
+.temp1_2_professional_exp,.temp1_2_project,.temp1_2_education{
+    margin-bottom: 20px;
+}
 
 /* mediaquery--------------------- */
 /* Media query for small devices */
@@ -411,7 +462,7 @@ h4 {
     #main_container {
         flex-direction: row;
     }
-
+ 
     #template_1,
     #template_2 {
         width: 60%;

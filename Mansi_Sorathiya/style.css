@@ -134,6 +134,27 @@ header {
   color: #fff;
 }
 
+/* carsouel */
+
+.section2_template {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 5rem;
+  padding:30px;
+}
+.carousel {
+  display: flex;
+  gap:20px;
+  justify-content: center;
+  align-items: center;
+  /* transition: transform 0.5s ease-in-out; */
+}
+
+img {
+  width: 300px;
+  height: auto;
+}
+
 /* section3------------------------------ */
 .section3 {
   width: 100%;
@@ -193,6 +214,7 @@ header {
   font-size: 1rem;
   color: #555;
 }
+
 
 /* footer------------------------ */
 footer {
