@@ -1,0 +1,244 @@
+/* 
+*{
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #cdcaca;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.margintop {
+    margin-top: 20px;
+}
+
+.container {
+    width: 90%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.mainForm {
+    display: flex;
+    width: 97%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    width: 97%;
+    height: 100%;
+    gap: 2rem;
+}
+
+.card1 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    overflow: scroll;
+}
+
+.card1:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card1 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    overflow: scroll;
+}
+
+.card1:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card2 {
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    height: 40%;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.dateInvoice {
+    display: flex;
+    width: 97%;
+    height: 70px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dateSection {
+    display: flex;
+    width: 60%;
+    height: 97%;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.reviewInvoice {
+    width: 60%;
+    height: max-content;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgb(76, 101, 175);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.reviewInvoice:hover {
+    background-color: rgb(81, 68, 201);
+}
+
+.reviewInvoice:active {
+    transform: scale(0.9);
+}
+
+.billSection {
+    display: flex;
+    width: 98%;
+    height: max-content;
+    gap: 25px;
+}
+
+.billTo,
+.billFrom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 49%;
+    gap: 5px;
+    height: max-content;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    background-color: #7578e0;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #5145a0;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.section {
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.section.total.updated {
+    background-color: #d4edda;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+#billContent {
+    border: 5px solid black;
+    padding: 10px;
+    margin: 10px;
+    line-height: 1.2rem;
+}

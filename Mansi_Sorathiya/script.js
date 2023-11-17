@@ -1,8 +1,13 @@
-//!<--------------default value for header of template------------------------------------>
-document.querySelectorAll(".tem1_header").forEach((el)=>{
-  el.innerText = "FIRST NAME SURNAME";
-}) 
+// !<-----------------------add home page link into template page------------------------->
+document.querySelector("#header_file_icon").addEventListener("click", (e) => {
+  console.log(window.location);
+  window.location.pathname = "/MCT_4_Team_05/Mansi_Sorathiya/index.html";
+});
 
+//!<--------------default value for header of template------------------------------------>
+document.querySelectorAll(".tem1_header").forEach((el) => {
+  el.innerText = "FIRST NAME SURNAME";
+});
 
 //!<----------------select template--------------------------->
 let selectTemplate = document.querySelector("select");
@@ -60,13 +65,16 @@ function addDataToEmploymentDiv(
         1: "newDiv2",
         2: "newDiv3",
       };
+      let startDate = new Date(inputsEmployement[0].value);
+      let endDate = new Date(inputsEmployement[1].value)
+      console.log(startDate.toLocaleDateString());
       for (let key in obj) {
         obj[key] = document.createElement("div");
         obj[key].innerHTML = `
             <div class="employment_temp1_main">
                 <div class="employment_temp1_main1">
                     <ul><li>${inputsEmployement[2].value} At ${inputsEmployement[3].value}</li></ul>
-                    <p>${inputsEmployement[0].value}/${inputsEmployement[1].value}</p>
+                    <p>${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}</p>
                 </div>
                 <p class="temp1_job_title">${inputsEmployement[2].value}</p>
                 <p class="temp1_emplyoment_description">${textareaEmployement.value}</p>
@@ -87,9 +95,9 @@ addEmploymentBtn.addEventListener("click", (e) => {
   addEmploymentBtn.id = "add_employment_after_click";
   addEmploymentInfo.innerHTML = `
     <h4 class="start_date">Start</h4>
-    <input type="date" style="margin-bottom='0px'"><br>
+    <input type="month" style="margin-bottom='0px'"><br>
     <h4 class="end_date">End</h4>
-    <input type="date" required><br>
+    <input type="month" required><br>
     <input type="text" name="" id="" placeholder="Job Title" required><br>
     <input type="text" placeholder="Employer" required><br>
     <textarea name="" id="" cols="30" rows="6" placeholder="Description" required></textarea>
@@ -168,9 +176,9 @@ addProjectBtn.addEventListener("click", (e) => {
   addProjectBtn.id = "add_project_after_click";
   addProjectInfo.innerHTML = `
     <h4 class="start_date">Start</h4>
-    <input type="date"><br>
+    <input type="month"><br>
     <h4 class="end_date">End</h4>
-    <input type="date"><br>
+    <input type="month"><br>
     <input type="text" name="" id="" placeholder="Project Title"><br>
     <textarea name="" id="" cols="30" rows="6" placeholder="Description"></textarea>
     <p id="warning"></p>
@@ -248,9 +256,9 @@ addEducationBtn.addEventListener("click", (e) => {
   addEducationBtn.id = "add_education_after_click";
   addEducationInfo.innerHTML = `
     <h4 class="start_date">Start</h4>
-    <input type="date"><br>
+    <input type="month"><br>
     <h4 class="end_date">End</h4>
-    <input type="date"><br>
+    <input type="month"><br>
     <input type="text" name="" id="" placeholder="School/College"><br>
     <input type="text" name="" id="" placeholder="degree"><br>
     <textarea name="" id="" cols="30" rows="6" placeholder="Description"></textarea>
@@ -354,21 +362,3 @@ function generatePDF() {
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
   });
 }
-
-// carasoul for home page
-// const carousel = document.querySelector('.carousel');
-//   let counter = 1;
-
-//   setInterval(() => {
-//     carousel.style.transition = 'transform 0.5s ease-in-out';
-//     carousel.style.transform = `translateX(${-counter * 100}%)`;
-//     counter++;
-
-//     if (counter === 6) {
-//       setTimeout(() => {
-//         carousel.style.transition = 'none';
-//         carousel.style.transform = 'translateX(0)';
-//         counter = 1;
-//       }, 500);
-//     }
-//   }, 3000);

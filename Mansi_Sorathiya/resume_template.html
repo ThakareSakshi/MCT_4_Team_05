@@ -21,14 +21,21 @@
   </head>
   <body>
     <header>
-      <img src="./Assets/cv-icon.svg" alt="" />
+      <span id="header_file_icon"
+        ><i class="fa-solid fa-file"></i> BuildCareer</span
+      >
       <div class="wrapper" onclick="generatePDF()">
-        <a href="#"><i class="fa-solid fa-download"></i><span>Download PDF</span></a>
+        <a href="#"
+          ><i class="fa-solid fa-download"></i><span>Download PDF</span></a
+        >
       </div>
     </header>
     <main id="main_container">
       <div id="addInfo">
-        <h1>Let's Build Your <span style="color:rgb(245,102,0)">Resume here</span></h1>
+        <h1>
+          Let's Build Your
+          <span style="color: rgb(245, 102, 0)">Resume here</span>
+        </h1>
         <h3>Template Type</h3>
         <select name="" id="">
           <option value="Two-Column" class="option">Two-Column</option>
@@ -40,11 +47,11 @@
         <input
           type="color"
           value="#fffff"
-          style="width: 50px; padding: 0"
+          style="width: 50px; padding: 0; width:50px;height:30px"
           id="color1"
         />
         <h3>Header-Text Color</h3>
-        <input type="color" style="width: 50px; padding: 0" id="color2" />
+        <input type="color" style="width: 50px; padding: 0;width:50px;height:30px" id="color2"/>
 
         <h3>Personal Details</h3>
         <input type="text" placeholder="Name" /><br />
@@ -64,23 +71,25 @@
         ><br />
         <input type="text" placeholder="Skills" /><br />
 
-        <button id="add_employment" style="margin-bottom: 20px;">Add Employment</button>
+        <button id="add_employment" style="margin-bottom: 20px">
+          Add Employment
+        </button>
         <div id="add_employement_info_static"></div>
 
         <button id="add_project">Add Project</button>
         <div id="add_project_info_static"></div>
 
-        <h3 style="margin-top: 40px;">Educational Background</h3>
+        <h3 style="margin-top: 40px">Educational Background</h3>
         <button id="add_education">Add Education</button>
         <div id="add_education_info_static"></div>
       </div>
-
+      <h1 class="templateForSmallDevice"><span>Preview</span> Of Template</h1>
       <!-------------- template1--------------->
       <section id="template_1">
         <div id="template1_container">
           <div class="temp1_header">
-            <h1 style="color: white;">FIRST NAME</h1>
-            <p style="color:white" class="temp1_header_para">Job Title</p>
+            <h1 style="color: white">FIRST NAME</h1>
+            <p style="color: white" class="temp1_header_para">Job Title</p>
           </div>
           <div class="temp1_main_content">
             <div id="temp1_1">
@@ -107,8 +116,7 @@
             <div id="temp1_2">
               <h4>SUMMARY</h4>
               <hr />
-              <div class="temp1_2_summary">
-              </div>
+              <div class="temp1_2_summary"></div>
               <h4>PROFESSIONAL EXPERIENCE</h4>
               <hr />
               <div class="temp1_2_professional_exp"></div>
@@ -120,7 +128,6 @@
               <div class="temp1_2_education"></div>
             </div>
           </div>
-          
         </div>
       </section>
 
@@ -128,7 +135,7 @@
       <section id="template_2">
         <div id="template2_container">
           <div id="temp2_1">
-            <div class="temp1_header" id="temp2_header" style="padding: 20px;">
+            <div class="temp1_header" id="temp2_header" style="padding: 20px">
               <h1 id="abc"></h1>
               <p class="temp1_header_para"></p>
             </div>
@@ -173,16 +180,15 @@
           <div id="temp3_1">
             <div class="temp1_header" id="tem3_header">
               <h1>FIRST NAME SURNAME</h1>
-              <p class="temp1_header_para" style="display:none"></p>
+              <p class="temp1_header_para" style="display: none"></p>
             </div>
           </div>
-          <hr id="temp3_line1">
-          <hr id="temp3_line2">
-          
+          <hr id="temp3_line1" />
+          <hr id="temp3_line2" />
+
           <div id="temp3_icons">
             <p>
-              <i class="fa-solid fa-phone"></i
-              ><span class="temp1_phone"></span>
+              <i class="fa-solid fa-phone"></i><span class="temp1_phone"></span>
             </p>
             <p>
               <i class="fa-solid fa-envelope"></i
@@ -196,11 +202,11 @@
           <div id="temp2_2">
             <div class="temp3_summary">
               <div class="line"></div>
-              <h4 style="margin-top: 0;">SUMMARY</h4>
+              <h4 style="margin-top: 0">SUMMARY</h4>
               <div class="line"></div>
             </div>
             <div class="temp1_2_summary"></div>
-            
+
             <div class="temp3_summary">
               <div class="line"></div>
               <h4>EXPERIENCE</h4>
