@@ -91,9 +91,6 @@ a:hover:after {
 select {
   padding: 10px;
   font-size: 16px;
-  /* border: 0.5px solid black; */
-  /* background-color: #fff; */
-  /* color: #333; */
   height: 30px;
 }
 
@@ -119,6 +116,7 @@ select:focus {
 #addInfo {
   width: 40%;
   padding: 16px;
+  background-color: rgb(230, 228, 228);
 }
 #addInfo input,
 #addInfo select {
@@ -130,7 +128,12 @@ select:focus {
   width: 100%;
   padding: 5px;
 }
-
+select{
+    border:none;
+}
+textarea{
+    border: none;
+}
 #add_employment_info {
   margin-bottom: 1.5rem;
 }
@@ -213,7 +216,16 @@ select:focus {
 .end_date {
   margin-top: 0px;
 }
-
+input{
+    border:none;
+}
+input:focus,textarea:focus,select:focus
+{
+    border: 1px solid rgb(245,102,0);
+    box-shadow: 0 0 3px rgb(245,102,0);
+    outline-offset: 0px;
+    outline: none;
+}
 /* <--------------#template_1-------------------------> */
 #template_1,
 #template_2,
