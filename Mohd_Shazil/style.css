@@ -92,3 +92,49 @@
     margin:10px;
   }
 
+  @media (max-width:650px) {
+     .board{
+      grid-template-columns: repeat(var(--size), 40px);
+      grid-template-rows: repeat(var(--size), 40px);
+      font-size: 14px;
+     
+     }
+     body{
+      background-repeat: repeat;
+     }
+     .board > [data-status="mine"]::after{
+      content:"";
+      background-image: url("./boom.gif");
+      background-size: contain;
+      position: absolute;
+      top:0;
+      left:0;
+      height:30px;
+      width: 30px;
+      object-fit: cover;
+  
+  
+    }
+  }
+  @media (max-width:400px) {
+    .board{
+      grid-template-columns: repeat(var(--size), 20px);
+      grid-template-rows: repeat(var(--size), 20px);
+      font-size: 10px;
+     }
+     .board > [data-status="mine"]::after{
+      content:"";
+      background-image: url("./boom.gif");
+      background-size: contain;
+      /* background-color: aqua; */
+      position: absolute;
+      top:0;
+      left:0;
+      height:20px;
+      width: 20px;
+      object-fit: cover;
+  
+  
+    }
+  }
+

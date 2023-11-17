@@ -30,10 +30,19 @@ let js_code=CodeMirror(document.querySelector("#js-code"),{
 
 
 })
-html_code.setValue(window.localStorage.getItem(`html-code`))
-css_code.setValue(window.localStorage.getItem(`css-code`))
+let h_code=window.localStorage.getItem(`html-code`)
+let c_code=window.localStorage.getItem(`css-code`)
+let j_code=window.localStorage.getItem(`js-code`)
+if(h_code!=null){
+    html_code.setValue(h_code)
+}
+if(c_code!=null){
+    css_code.setValue(c_code)
+}
 
-js_code.setValue(window.localStorage.getItem(`js-code`))
+if(j_code!=null){
+    js_code.setValue(j_code)
+}
 
 displayOutput();
 
@@ -58,6 +67,10 @@ function displayOutput(){
 // -------------------- when any input is added to code editor-------------------------
 document.addEventListener("input",()=>{
     displayOutput();
+})
+
+document.addEventListener("keydown",(e)=>{
+  displayOutput();
 })
 
 
@@ -124,9 +137,11 @@ document.querySelector(".clear2").addEventListener("click",()=>{
  document.querySelector(".copy-html-code").addEventListener("click",(e)=>{
     if(e.which==1){
         e.target.style.color="yellow";
+        document.querySelector("#copy-dialog").style.display="flex";
         setTimeout(() => {
             e.target.style.color="white";
-        },250);
+            document.querySelector("#copy-dialog").style.display="none";
+        },1000);
         navigator.clipboard.writeText(html_code.getValue());
     }
     
@@ -134,9 +149,13 @@ document.querySelector(".clear2").addEventListener("click",()=>{
  document.querySelector(".copy-css-code").addEventListener("click",(e)=>{
     if(e.which==1){
         e.target.style.color="yellow";
+        document.querySelector("#copy-dialog").style.display="flex";
+
         setTimeout(() => {
             e.target.style.color="white";
-        },250);
+            document.querySelector("#copy-dialog").style.display="none";
+
+        },1250);
         navigator.clipboard.writeText(css_code.getValue());
     }
     
@@ -145,9 +164,13 @@ document.querySelector(".clear2").addEventListener("click",()=>{
  document.querySelector(".copy-js-code").addEventListener("click",(e)=>{
     if(e.which==1){
         e.target.style.color="yellow";
+        document.querySelector("#copy-dialog").style.display="flex";
+
         setTimeout(() => {
             e.target.style.color="white";
-        },250);
+            document.querySelector("#copy-dialog").style.display="none";
+
+        },1000);
         navigator.clipboard.writeText(js_code.getValue());
     }
     

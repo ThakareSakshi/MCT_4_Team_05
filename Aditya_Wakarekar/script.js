@@ -7,6 +7,8 @@ let mistake = 0;
 let accuracy = 100;
 let word_array = [];
 let index=0;
+let remaining_time ;
+let high_score=window.localStorage.getItem("high-score")!=null ? window.localStorage.getItem("high-score"):0;
 // -----------fetched buttons----------------
 const move_Difficluty_page = document.querySelector("#move-to-difficulty");
 const move_to_typing = document.querySelector("#move-to-typing");
@@ -60,13 +62,13 @@ try_again_after_result.addEventListener("click", () => {
 
 // ----------------typing functionality--------------------
 
-// --------------timer--------------------------------
+// --------------timer of 60 sec--------------------------------
 let istyping=true;
 textbox.focus();
 textbox.addEventListener("click", () => {
   let timer = document.querySelector("#remaining-time");
   if(!istyping && time!=0) return;
-  let remaining_time = setInterval(() => {
+  remaining_time = setInterval(() => {
     time--;
     istyping=false;
     timer.innerText = time;
@@ -176,7 +178,15 @@ function calculateprgress() {
   return accuracy;
 }
 
+
+// ------------------display result--------------------
 function displayresult() {
+
+  if (high_score<wpm){
+    high_score=wpm;
+    window.localStorage.setItem("high-score",high_score);
+  }
+  document.querySelector("#high-score").innerText=high_score+" WPM";
   let accuracy = calculateprgress();
   document.querySelector(
     "#speed"
@@ -192,7 +202,8 @@ function resetAll() {
   para.innerHTML = "";
   index=0;
   textbox.value=0;
-  updateValues()
+  updateValues();
+  document.querySelector("#remaining-time").innerText=time;
 }
 
 let buttons=document.querySelectorAll("button");
@@ -201,4 +212,10 @@ buttons.forEach(ele=>{
     let sound=new Audio("./assets/click.wav");
     sound.play();
   })
+})
+
+try_again_btn.addEventListener("click",()=>{
+  resetAll()
+  AddParagraph() 
+  clearInterval(remaining_time)
 })

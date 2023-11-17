@@ -5,15 +5,25 @@
     box-sizing: border-box;
 }
 body{
-    background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9oIpDsdnQgV3bTmFrm2cVX0OwZI2kKmuEEQ&usqp=CAU");
+    /* background: rgb(247, 227, 198); */
+    background:url("https://resources.owllabs.com/hs-fs/hubfs/Zoom_BG2_Office-View-jpg.jpeg?width=873&name=Zoom_BG2_Office-View-jpg.jpeg");
+    /* background-blend-mode: difference; */
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Ubuntu', sans-serif;
+    backdrop-filter: blur(4px);
+    /* box-shadow: 2px 2px 5px rgb(16, 16, 16); */
+   
+
 }
 nav{
     font-size: 30px;
-    color:#17394d;
+    color:#11344f;
     font-weight: 800;
+    padding:20px;
+    background-color: rgba(253, 253, 253, 0.411);
+    box-shadow: 2px 2px 8px white;
+    backdrop-filter: blur(8px);
 }
 main{
     
@@ -24,6 +34,8 @@ main{
     padding:40px;
     display: flex;
     gap:20px;
+    flex-direction: column;
+    overflow: scroll;
 }
 .boardS{
     display: flex;
@@ -33,15 +45,26 @@ main{
     flex-wrap: wrap;
 
 
+
+}
+::-webkit-scrollbar-track{
+    width: 1px;
+}
+
+::-webkit-scrollbar{
+   
+    width:0;
 }
 .Board{
     padding:10px;
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, .6);
     display: flex;
     width: 300px;
     flex-direction: column;
     align-items: center;
     height: auto;
+    box-shadow: 2px 2px 5px rgb(203, 203, 203);
+    backdrop-filter: blur(8px);
 }
 .Board-name{
     display: flex;
@@ -49,7 +72,7 @@ main{
     align-items: center;
     font-size:16px ;
     font-weight: 700;
-    color:#17394d;
+    color:#132732;
     width: 100%;
     padding: 10px;
 }
@@ -78,6 +101,11 @@ main{
     font-weight: 700;
     color:#17394d;
 }
+.All-tasks{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
 .add-task{
     width: 100%;
     padding:20px;
@@ -88,7 +116,7 @@ main{
     box-shadow: 1px 1px 4px rgb(197, 197, 197);
 }
 .new-board{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.545);
     padding:15px;
     color:#17394d;
     box-shadow: 2px 2px 4px rgb(202, 200, 200);
@@ -96,6 +124,7 @@ main{
     gap:12px;
     width: 300px;
     text-align: center;
+    backdrop-filter: blur(12px);
 }
 .displayBoard{
    background: white;
@@ -111,13 +140,15 @@ main{
    display: none;
 }
 
-.Projectname{
+.Projectname,.task-name,input{
     padding:10px;
     border-radius: 5px;
     width: 100%;
+    border: none;
     outline-color: lightseagreen;
+    border:1px solid lightblue
 }
-.Add-new-board-btn{
+.Add-new-board-btn,.Add-new-task-btn,#save{
     padding:10px;
     border:none;
     background-color: lightseagreen;
@@ -126,7 +157,7 @@ main{
     margin:5px;
     cursor: pointer;
 }
-.cancel{
+.cancel,.cancel-task,#reject{
     padding:10px;
     border:none;
     background-color: rgb(121, 121, 121);
@@ -136,6 +167,103 @@ main{
     cursor: pointer;
    
 
+}
+.task-title-input{
+    background: white;
+    height:100px;
+    background-color: white;
+    padding:15px;
+    color:#17394d;
+    box-shadow: 2px 2px 4px rgb(202, 200, 200);
+    border-radius: 12px;
+    gap:12px;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+section{
+    position: fixed;
+    top:0;
+    left: 0;
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.477);
+}
+.dialog{
+padding:20px;
+background-color: rgb(255, 255, 255);
+position: absolute;
+width: 300px;
+display: flex;
+flex-direction: column;
+gap:10px;
+
+}
+
+label{
+    font-size: 17px;
+    font-weight: 800;
+    color: #17394d;
+}
+.task-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.trash{
+    display: none;
+    cursor: pointer;
+}
+.Board:hover .trash{
+    display: unset;
+}
+
+.task:hover .trash{
+    display: unset;
+}
+
+.label-container{
+    background-color: rgb(71, 164, 217);
+    color:white;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 15px;
+    /* padding:10px; */
+    margin:10px 0px;
+}
+.boardS{
+    /* background: rgba(243, 191, 191, 0.59); */
+    padding:10px;
+}
+
+@media (max-width:400px) {
+    .Board{
+        width: 250;
+        font-size: 15px;
+    }
+    .displayBoard{
+        width:100%;
+        height:auto;
+    }
+    .new-board{
+       width: auto;
+        margin:10px;
+    }
+    .add-task{
+        font-size: 14px;
+        padding:6px
+    }
+    .Add-new-board-btn,.cancel,.cancel-task,.Add-new-task-btn{
+        padding:6px;
+        margin:1px;
+    }
+}
+.addMoreDetail,.add-task{
+    cursor: pointer;
 }
 
 

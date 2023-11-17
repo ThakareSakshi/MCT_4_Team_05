@@ -81,6 +81,8 @@ textarea{
   line-height: 25px;
   padding:20px;
   text-align: justify;
+  max-height:300px;
+  overflow-y: scroll;
 }
 
 .text-bold{
@@ -163,4 +165,44 @@ img{
     /* font-size: 20px; */
     font-weight: bold;
     text-align: center;
+    font-size: 14px;
+  }
+  #speed h2{
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+  }
+  @media (max-width:800px){
+    .text-editor-container{
+      width: 80%;
+    }
+  }
+  @media (max-width:676px){
+    .typewriter h1{
+      font-size: 16px;
+    }
+    .heading{
+      font-size: 16px;
+      font-family: 'Agbalumo';
+      letter-spacing: .15em;
+     
+    }
+    .para{
+      font-size: 13px;
+      overflow-y: scroll;
+      max-height:300px;
+      letter-spacing: 0;
+    }
+    .text-editor-container{
+      width: 80%;
+    }
+    .text-bold{
+      font-size: 13px;
+    }
+    .info_container span{
+      font-size: 13;
+    }
+    textarea{
+      top:70px;
+    }
   }

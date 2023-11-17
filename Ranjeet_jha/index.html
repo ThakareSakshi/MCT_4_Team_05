@@ -18,48 +18,86 @@
 
 <!-- ----------------main content----------------  -->
 <main>
+    <!-- --------------new board--------------  -->
+    <div class="addBoard">
 
+        <div class="new-board">
+           + Add Board
+        </div>
+    </div>    
     <!-- ------------------contain all boards------------------ -->
  <div class="boardS">
-
-    <div class="Board">
+        
+    <!-- <div class="Board">
         <div class="Board-name">
             <Span>Completed</Span>
-            <span><i class="fa-solid fa-ellipsis"></i></span>
+            <span class="trash"  onclick="deleteCard(event)"><i class="fa-solid fa-ellipsis"></i></span>
         </div>
 
         <div class="to-do-list-container">
-             <div class="All-tasks">
-                <div class="task">
+             <div class="All-tasks"> -->
+                <!-- <div class="task">
                     <div class="task-title">task 1</div>
                     <div class="addMoreDetail">
                         <i class="fa-solid fa-bars-staggered"></i>
                     </div>
-                </div>
+                </div> -->
+             <!-- </div>
+             <div class="task-title-input">
+                <input type="text" class="task-name" placeholder="Task Title">
+                <div><button class="Add-new-task-btn">Add</button>
+                    <button class="cancel-task">cancel</button></div>
              </div>
-            <button class="add-task">Add Task</button>
+            <button class="add-task" onclick="displayTaskTitleInputDiv(event)">Add Task</button>
         </div>
-    </div>
+    </div> -->
     
 
  </div>
 
-
+<!-- ----------------displat this section to add new board-----------------  -->
  <div class="displayBoard">
     <input type="text" class="Projectname" placeholder="project Title">
     <div><button class="Add-new-board-btn">Add</button>
         <button class="cancel">cancel</button></div>
  </div>
- <!-- -------------------add new board-------------------  -->
- <div class="addBoard">
 
-    <div class="new-board">
-        Add Board
-    </div>
-        
- </div>
+ 
+ <!-- ----------------this data update data in tasks--------------- -->
+ <section>
+    <div class="dialog">
+    
+        <label >Title</label>
+      <div>
+        <input type="text" id="title">
+        <!-- <button class="add" id="add">Add</button> -->
+      </div>
+    
+    
+      <label for="">Date</label>
+      <div>
+        <input type="date" id="date">
+      </div>
+      <label for="">label</label>
+      <div>
+        <!-- <input type="color" id="color"> -->
+        <input type="text" id="label" placeholder="add label">
+    
+      </div>
+
+      <div>
+        <button id="save">Save</button>
+        <button id="reject">reject</button>
+      </div>
+    
+    
+     </div>
+ </section>
+ <!-- <i class="fa fa-trash" aria-hidden="true"></i> -->
 
 </main>
+
+
 
     
 <script src="./script.js"></script>
