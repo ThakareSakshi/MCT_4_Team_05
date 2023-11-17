@@ -602,15 +602,20 @@ ratingInputs.forEach((checkbox) => {
 });
 
 //filter basis of price
-let priceInputs = document.querySelector("#min-price");
-priceInputs.addEventListener("click", (e) => {
+function roundOf(val){
+  return Math.round(val/100)*100;
+}
+let range = document.querySelector("#range");
+range.addEventListener("input", (e) => {
   product_container.innerHTML = "";
-  if (e.target.value != "min") {
+  let maxValue = roundOf(e.target.value);
+  let minValue = document.querySelector("#min-price").value;
+  if(minValue < 250){
+    minValue = 250;
+  }
+  document.querySelector("#max-price option").innerHTML = maxValue;
     let filterArr = product.filter((el) => {
-      return el.price >= parseInt(e.target.value) && el.price <= 60000;
+      return el.price >= minValue && el.price <= maxValue;
     });
     addProducts(filterArr);
-  } else {
-    addProducts(product);
-  }
 });
