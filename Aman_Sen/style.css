@@ -249,4 +249,14 @@ input {
   padding: 12px 5px;
   border-bottom: 1px solid #e0dfdf;
 }
+.sort-by span{
+    transition: 0.3s;
+}
+.sort-by span:hover{
+    color:blue;
+    text-decoration:underline;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 
