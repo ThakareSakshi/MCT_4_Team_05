@@ -1,5 +1,5 @@
 
-<h1> TypeRush Typing Speed Test Game</h1>
+<h1>Resume Template</h1>
 
 hosted link:<a href="https://thakaresakshi.github.io/MCT_4_Team_05/Mansi_Sorathiya/index.html">click here</a>
 
@@ -7,9 +7,8 @@ hosted link:<a href="https://thakaresakshi.github.io/MCT_4_Team_05/Mansi_Sorathi
 ## Table of Contents:-
 1. [Introduction](#introduction)
 2. [Key Features](#key-features)
-3. [How to Play](#how-to-play)
-4. [Technologies Used](#technologies-used)
-5. [Website UI Explanation](#website-ui-explanation)
+3. [Technologies Used](#technologies-used)
+4. [Website UI Explanation](#website-ui-explanation)
 ---
 ## Introduction:
 
@@ -31,18 +30,6 @@ Welcome to the Typing Speed Test Game! This interactive and engaging game is des
 
 #### User-Friendly Interface:
   - The game is designed with a simple and intuitive interface, making it accessible for users of all skill levels.
----
-## How to Play:
-
-1. Choose a difficulty level or set a custom challenge.
-2. Start typing the displayed text as quickly and accurately as possible.
-3. The game will measure your words per minute (WPM) and accuracy.
-4. Review your performance, identify areas for improvement, and challenge yourself to do better next time.
-    Whether you're using this game for personal development, as a fun competition with friends, or even in a classroom setting, the Typing Speed Test Game is a 
-    versatile tool for honing your typing skills.
-
-Start typing and see how fast and accurately you can conquer the challenges!
-
 ---
 
 ## Technologies Used:
