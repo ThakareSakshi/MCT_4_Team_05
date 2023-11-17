@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-#template_1,#template_2,#addInfo{
-    font-family: "Arial", sans-serif;
+#template_1,
+#template_2,
+#addInfo {
+  font-family: "Arial", sans-serif;
 }
 /* <---------------Header-------------------------------> */
 header h1 {
@@ -67,6 +69,17 @@ a:hover:after {
 .wrapper span {
   font-weight: 600;
 }
+#header_file_icon:hover {
+  cursor: pointer;
+  color: rgb(245, 102, 0);
+}
+#header_file_icon {
+  color: white;
+  transition: 0.3s;
+}
+#header_file_icon {
+  font-size: 1.5rem;
+}
 /*<--------------------main container--------------------------------------------------------> */
 #main_container {
   display: flex;
@@ -78,15 +91,15 @@ a:hover:after {
 select {
   padding: 10px;
   font-size: 16px;
-  border: 1px solid black;
-  background-color: #fff;
-  color: #333;
+  /* border: 0.5px solid black; */
+  /* background-color: #fff; */
+  /* color: #333; */
+  height: 30px;
 }
 
 /* Style when the dropdown is open */
 select:focus {
-  border: 1px solid #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.7);
+  outline: invert;
 }
 #addInfo h1 {
   font-family: "Poppins", sans-serif;
@@ -108,7 +121,11 @@ select:focus {
   padding: 16px;
 }
 #addInfo input,
+#addInfo select {
+  height: 50px;
+}
 #addInfo textarea,
+#addInfo input,
 #addInfo select {
   width: 100%;
   padding: 5px;
@@ -169,17 +186,18 @@ select:focus {
 #add_education_data,
 #add_project_data {
   width: 30%;
-  padding: 5px;
+  padding: 10px;
   border: none;
-  background-color: rgb(16, 129, 234);
+  background-color: rgb(0, 99, 112);
   color: white;
-  font-weight: 500;
+  font-weight: 600;
   box-shadow: 2px 3px 2px rgb(205, 202, 202);
 }
 #add_emplyoment_data:hover {
   box-shadow: none;
   cursor: pointer;
 }
+
 #warning,
 #employement_warning,
 #education_warning {
@@ -197,56 +215,57 @@ select:focus {
 }
 
 /* <--------------#template_1-------------------------> */
-#template_1,#template_2,#template_3{
+#template_1,
+#template_2,
+#template_3 {
   width: 60%;
   padding: 30px 20px;
 }
-#template1_container{
+#template1_container {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width:43rem;
+  width: 43rem;
   box-shadow: 2px 3px 5px grey;
 }
 #temp1_1 {
   width: 250px;
-  height:120vh;
+  height: 120vh;
   background-color: rgb(238, 238, 238);
 }
 #temp1_2 {
-    padding: 10px;
-    width:400px;
-  }
+  padding: 10px;
+  width: 400px;
+}
 #temp1_content {
   padding: 10px;
-  width:100%;
+  width: 100%;
   height: fit-content;
 }
-#temp1_content p{
-    margin-bottom: 10px;
-    font-weight:300;
-    width: 230px;
+#temp1_content p {
+  margin-bottom: 10px;
+  font-weight: 300;
+  width: 230px;
 }
-#temp1_content p i{
-    margin-right: 10px;
+#temp1_content p i {
+  margin-right: 10px;
 }
 .temp1_header {
   height: 150px;
   width: 100%;
   background-color: brown;
-  padding:20px;
+  padding: 20px;
 }
-.temp1_header h1{
-    margin-bottom: 10px;
-    font-size: 2.6rem;
+.temp1_header h1 {
+  margin-bottom: 10px;
+  font-size: 2.6rem;
 }
-.temp1_header p{
-    font-size: 1.5rem;
-    width:100%;
+.temp1_header p {
+  font-size: 1.5rem;
+  width: 100%;
 }
 #template1_container hr {
-  margin-bottom: 16px;
-  width:100%;
+  width: 100%;
 }
 .temp1_skills {
   display: flex;
@@ -261,71 +280,71 @@ select:focus {
   margin-right: 10px;
   background-color: black;
 }
-.temp1_main_content{
-    display: flex;
-    width:43rem;
-    height:100%;
+.temp1_main_content {
+  display: flex;
+  width: 43rem;
+  height: 100%;
 }
 
 /* project */
-.employment_temp1_main{
-    margin-bottom: 20px;
+.employment_temp1_main {
+  margin-bottom: 20px;
 }
-.temp1_emplyoment_description{
-    margin-top: 10px;
-    margin-left: 15px;
+.temp1_emplyoment_description {
+  margin-left: 15px;
 }
-.temp1_job_title{
-    margin-top: 5px;
+.temp1_job_title {
+  margin-top: 5px;
 }
-.project_main1,.employment_temp1_main1{
-    display:flex;
-    width:100%;
-    justify-content: space-between;
-    
+.project_main1,
+.employment_temp1_main1 {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
-.employment_temp1_main1 p{
-    font-size: 12px;
+.employment_temp1_main1 p {
+  font-size: 12px;
 }
-.employment_temp1_main1 ul li{
-    font-weight:bolder;
-    margin-left: 12px;
+.employment_temp1_main1 ul li {
+  font-weight: bolder;
+  margin-left: 12px;
 }
-.temp1_job_title{
-    font-size: 13px;
-    margin-left: 11px;
+.temp1_job_title {
+  font-size: 13px;
+  margin-left: 11px;
 }
-.temp1_2_summary{
-    display:flex;
-    flex-wrap: wrap;
-    width:100%;
+.temp1_2_summary {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
-.temp1_2_summary p{
-   word-wrap: break-word;
+.temp1_2_summary p {
+  word-wrap: break-word;
 }
 
 /* <----------------------template_2-------------------------> */
-#template2_container,#template3_container{
-    box-shadow: 2px 3px 5px grey;
-    height:100%;
+#template2_container,
+#template3_container {
+  box-shadow: 2px 3px 5px grey;
+  height: 100%;
 }
-#temp2_header h1{
-    font-size: 1.8rem;
+#temp2_header h1 {
+  font-size: 1.8rem;
 }
-#temp2_header p{
-    font-size: 1rem;
+#temp2_header p {
+  font-size: 1rem;
 }
-#temp2_1{
+#temp2_1 {
   display: flex;
 }
 #temp2_icons {
   position: absolute;
   right: 20px;
   color: black;
-  padding:18px;
+  padding: 18px;
 }
-.temp1_2_professional_exp{
-    width:100%;
+.temp1_2_professional_exp {
+  width: 100%;
 }
 #temp2_icons p i {
   margin-right: 10px;
@@ -340,146 +359,244 @@ select:focus {
   margin-top: 30px;
   padding: 20px;
 }
-hr {
-  margin-bottom: 10px;
-}
+
 h4 {
   margin-top: 20px;
 }
+.temp1_job_title{
+    margin-top: 0;
+    margin-bottom: 3px;
+    margin-left: 13px;
+}
+.temp1_emplyoment_description{
+    font-size: 15px;
+}
 
 /* template-3---------------------------- */
-#template_3{
-    font-family: 'Playfair Display', serif;
+#template_3 {
+  font-family: "Playfair Display", serif;
 }
-  /* icons */
- #temp3_icons{
-    display:flex;
-    width:100%;
-    gap:20px;
-    justify-content: space-between;
- }
- #temp3_icons p i{
-    margin-right: 10px;
- } 
- #template3_container{
-    padding:30px;
- }
- #tem3_header{
-    background-color:transparent;
-    width:100%;
-    text-align: center;
-    height:60px;
- }
- #tem3_header h1{
-    font-size: 2rem;
- }
- #temp3_line2{
-    border:3px solid black;
-    margin-top: -8px;
- }
- .temp3_summary{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 20px;
- }
- .line{
-    width:50%;
-    border:1.5px solid black;
-    height:0px;
- }
-.temp3_summary h4{
-    margin: 0 20px;
+/* icons */
+#temp3_icons {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  justify-content: space-between;
 }
-#template_2,#template_3{
-    display:none;
+#temp3_icons p i {
+  margin-right: 10px;
 }
-.temp1_2_professional_exp,.temp1_2_project,.temp1_2_education{
-    margin-bottom: 20px;
+#template3_container {
+  padding: 30px;
+}
+#tem3_header {
+  background-color: transparent;
+  width: 100%;
+  text-align: center;
+  height: 60px;
+}
+#tem3_header h1 {
+  font-size: 2rem;
+}
+#temp3_line2 {
+  border: 3px solid black;
+  margin-top: -8px;
+}
+.temp3_summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 20px;
+}
+.line {
+  width: 50%;
+  border: 1.5px solid black;
+  height: 0px;
+}
+.temp3_summary h4 {
+  margin: 0 20px;
+}
+#template_2,
+#template_3 {
+  display: none;
+}
+.temp1_2_professional_exp,
+.temp1_2_project,
+.temp1_2_education {
+  margin-bottom: 20px;
+}
+.templateForSmallDevice {
+  display: none;
+  margin-top: 3rem;
+  margin-left: 20px;
+}
+.templateForSmallDevice span {
+  color: rgb(245, 102, 0);
+}
+hr{
+    margin-bottom: 5px;
+}
+.employment_temp1_main1{
+    margin-top: 12px;
 }
 
 /* mediaquery--------------------- */
 /* Media query for small devices */
 @media only screen and (max-width: 600px) {
-    header {
-        padding: 8px 16px;
-    }
+  header {
+    padding: 8px 16px;
+  }
+  h4{
+    font-size: 12px;
+  }
+  header img {
+    width: 40px;
+  }
 
-    header img {
-        width: 40px;
-    }
+  a {
+    width: 100%;
+  }
 
-    a {
-        width: 100%;
-    }
+  #addInfo {
+    width: 100%;
+  }
 
-    #addInfo {
-        width: 100%;
-    }
+  #main_container {
+    flex-direction: column;
+  }
 
-    #main_container {
-        flex-direction: column;
-    }
+  .temp1_main_content {
+    width:100%;
+}
+  #template_1,
+  #template_2 {
+    width: 100%;
+  }
 
-    #template_1,
-    #template_2 {
-        width: 100%;
-    }
+  #template1_container,
+  #template2_container {
+    width: 100%;
+  }
 
-    #template1_container,
-    #template2_container {
-        width: 100%;
-    }
+  #temp1_1 {
+    width: 20%;
+    height: auto;
+  }
 
-    #temp1_1 {
-        width: 100%;
-        height: auto;
-    }
+  #temp1_2 {
+    width: 80%;
+  }
+  #main_container {
+    flex-direction: column;
+  }
 
-    #temp1_2 {
-        width: 100%;
-    }
+  #template_1,
+  #template_2,
+  #template_3 {
+    width: 100%;
+  }
+  #temp1_content p{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+  }
+  #temp1_content p i{
+    font-size: 10px;
+    margin-right: 3px;
+  }
+  .temp1_skills {
+    font-size: 12px;
+}
+.temp1_header h1 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+.temp1_header p{
+    font-size: 12px;
+}
+.temp1_header {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: flex-start;
+    height: 80px;
+    width: 100%;
+    background-color: brown;
+    padding: 20px;
+}
+.temp1_2_summary p {
+    font-size: 12px;
+}
+.employment_temp1_main1 ul li{
+    font-size: 14px;
+}
+.temp1_emplyoment_description {
+    font-size: 12px;
+    margin-top:0;
+    margin-left: 12px;
+}
+.employment_temp1_main1 p {
+    font-size: 8px;
+}
+.employment_temp1_main1{
+    margin-top: 10px;
+}
 }
 
 /* Media query for medium devices */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
-    header {
-        padding: 12px 24px;
-    }
+  header {
+    padding: 12px 24px;
+  }
+  .temp1_main_content {
+    display: flex;
+    height: 100%;
+}
+  header img {
+    width: 50px;
+  }
 
-    header img {
-        width: 50px;
-    }
+  a {
+    width: auto;
+  }
 
-    a {
-        width: auto;
-    }
+  #addInfo {
+    width: 100%;
+  }
 
-    #addInfo {
-        width: 40%;
-    }
+  #main_container {
+    flex-direction: column;
+  }
 
-    #main_container {
-        flex-direction: row;
-    }
- 
-    #template_1,
-    #template_2 {
-        width: 60%;
-    }
+  #template_1,
+  #template_2,
+  #template_3 {
+    width: 100%;
+  }
 
-    #template1_container,
-    #template2_container {
-        width: 100%;
-    }
+  #template1_container,
+  #template2_container {
+    width: 100%;
+  }
 
-    #temp1_1 {
-        width: 100%;
-        height: auto;
-    }
+  #temp1_1 {
+    width: 30%;
+    height: auto;
+  }
 
-    #temp1_2 {
-        width: 100%;
-    }
+  #temp1_2 {
+    width: 60%;
+  }
+  .templateForSmallDevice {
+    display: block;
+  }
+  #add_emplyoment_data,
+  #add_education_data,
+  #add_project_data {
+    width: 20%;
+  }
+  .temp1_header {
+    height: 120px;
+}
 }

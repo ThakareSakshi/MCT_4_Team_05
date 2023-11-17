@@ -1,8 +1,13 @@
-//!<--------------default value for header of template------------------------------------>
-document.querySelectorAll(".tem1_header").forEach((el)=>{
-  el.innerText = "FIRST NAME SURNAME";
-}) 
+// !<-----------------------add home page link into template page------------------------->
+document.querySelector("#header_file_icon").addEventListener("click", (e) => {
+  console.log(window.location);
+  window.location.pathname = "/MCT_4_Team_05/Mansi_Sorathiya/index.html";
+});
 
+//!<--------------default value for header of template------------------------------------>
+document.querySelectorAll(".tem1_header").forEach((el) => {
+  el.innerText = "FIRST NAME SURNAME";
+});
 
 //!<----------------select template--------------------------->
 let selectTemplate = document.querySelector("select");
@@ -354,21 +359,3 @@ function generatePDF() {
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
   });
 }
-
-// carasoul for home page
-// const carousel = document.querySelector('.carousel');
-//   let counter = 1;
-
-//   setInterval(() => {
-//     carousel.style.transition = 'transform 0.5s ease-in-out';
-//     carousel.style.transform = `translateX(${-counter * 100}%)`;
-//     counter++;
-
-//     if (counter === 6) {
-//       setTimeout(() => {
-//         carousel.style.transition = 'none';
-//         carousel.style.transform = 'translateX(0)';
-//         counter = 1;
-//       }, 500);
-//     }
-//   }, 3000);
