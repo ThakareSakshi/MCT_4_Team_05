@@ -1,13 +1,31 @@
-// console.log("mansi");
+// !<-----------------------add home page link into template page------------------------->
+document.querySelector("#header_file_icon").addEventListener("click", (e) => {
+  console.log(window.location);
+  window.location.pathname = "/MCT_4_Team_05/Mansi_Sorathiya/index.html";
+});
+
+//!<--------------default value for header of template------------------------------------>
+document.querySelectorAll(".tem1_header").forEach((el) => {
+  el.innerText = "FIRST NAME SURNAME";
+});
+
 //!<----------------select template--------------------------->
 let selectTemplate = document.querySelector("select");
-const templateIds = ["template_1", "template_2","template_3"];
-const optionList = ["Two-Column","Minimalist","Simple"]
+const templateIds = ["template_1", "template_2", "template_3"];
+const optionList = ["Two-Column", "Minimalist", "Simple"];
+const color1 = ["#8B0000", "#D3D3D3", "#ffffff"];
+const color2 = ["#ffffff", "#000000", "#000000"];
+// header and header text color
+document.querySelector("#color1").value = "#8B0000";
+document.querySelector("#color2").value = "#ffffff";
+
 selectTemplate.addEventListener("input", (e) => {
-  for (let i=0; i<2; i++) {
+  for (let i = 0; i <= 2; i++) {
     const templateElement = document.querySelector(`#${templateIds[i]}`);
     if (selectTemplate.value == optionList[i]) {
       templateElement.style.display = "block";
+      document.querySelector("#color1").value = color1[i];
+      document.querySelector("#color2").value = color2[i];
     } else {
       templateElement.style.display = "none";
     }
@@ -45,15 +63,18 @@ function addDataToEmploymentDiv(
       let obj = {
         0: "newDiv1",
         1: "newDiv2",
-        2:"newDiv3",
+        2: "newDiv3",
       };
+      let startDate = new Date(inputsEmployement[0].value);
+      let endDate = new Date(inputsEmployement[1].value)
+      console.log(startDate.toLocaleDateString());
       for (let key in obj) {
         obj[key] = document.createElement("div");
         obj[key].innerHTML = `
             <div class="employment_temp1_main">
                 <div class="employment_temp1_main1">
                     <ul><li>${inputsEmployement[2].value} At ${inputsEmployement[3].value}</li></ul>
-                    <p>${inputsEmployement[0].value}/${inputsEmployement[1].value}</p>
+                    <p>${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}</p>
                 </div>
                 <p class="temp1_job_title">${inputsEmployement[2].value}</p>
                 <p class="temp1_emplyoment_description">${textareaEmployement.value}</p>
@@ -74,9 +95,9 @@ addEmploymentBtn.addEventListener("click", (e) => {
   addEmploymentBtn.id = "add_employment_after_click";
   addEmploymentInfo.innerHTML = `
     <h4 class="start_date">Start</h4>
-    <input type="date" style="margin-bottom='0px'"><br>
+    <input type="month" style="margin-bottom='0px'"><br>
     <h4 class="end_date">End</h4>
-    <input type="date" required><br>
+    <input type="month" required><br>
     <input type="text" name="" id="" placeholder="Job Title" required><br>
     <input type="text" placeholder="Employer" required><br>
     <textarea name="" id="" cols="30" rows="6" placeholder="Description" required></textarea>
@@ -124,7 +145,7 @@ function addDataToProjectDiv(
       let obj = {
         0: "newDiv1",
         1: "newDiv2",
-        2:"newDiv3",
+        2: "newDiv3",
       };
       for (let key in obj) {
         obj[key] = document.createElement("div");
@@ -155,9 +176,9 @@ addProjectBtn.addEventListener("click", (e) => {
   addProjectBtn.id = "add_project_after_click";
   addProjectInfo.innerHTML = `
     <h4 class="start_date">Start</h4>
-    <input type="date"><br>
+    <input type="month"><br>
     <h4 class="end_date">End</h4>
-    <input type="date"><br>
+    <input type="month"><br>
     <input type="text" name="" id="" placeholder="Project Title"><br>
     <textarea name="" id="" cols="30" rows="6" placeholder="Description"></textarea>
     <p id="warning"></p>
@@ -235,9 +256,9 @@ addEducationBtn.addEventListener("click", (e) => {
   addEducationBtn.id = "add_education_after_click";
   addEducationInfo.innerHTML = `
     <h4 class="start_date">Start</h4>
-    <input type="date"><br>
+    <input type="month"><br>
     <h4 class="end_date">End</h4>
-    <input type="date"><br>
+    <input type="month"><br>
     <input type="text" name="" id="" placeholder="School/College"><br>
     <input type="text" name="" id="" placeholder="degree"><br>
     <textarea name="" id="" cols="30" rows="6" placeholder="Description"></textarea>
@@ -261,10 +282,7 @@ addEducationBtn.addEventListener("click", (e) => {
   );
 });
 
-//!<------------------------add data contact and header data to templates------------------------------------------->
-
-document.querySelector("#color1").value = "#8B0000";
-document.querySelector("#color2").value = "#ffffff";
+//!<------------------------add contact data and header data to templates------------------------------------------->
 let inputs = document.querySelectorAll("input");
 let summary = document.querySelector("textarea");
 // console.log(inputs);
@@ -286,10 +304,9 @@ document.addEventListener("input", (e) => {
     document.querySelectorAll(".temp1_gmail")[i].innerText = inputs[3].value;
     document.querySelectorAll(".temp1_location")[i].innerText = inputs[5].value;
     //add summary
-    document.querySelectorAll(".temp1_2_summary")[i].innerHTML =`
+    document.querySelectorAll(".temp1_2_summary")[i].innerHTML = `
       <p>${summary.value}</p>
-    `
-
+    `;
   }
 
   document.querySelectorAll("#temp2_icons p").forEach((el) => {
@@ -320,17 +337,23 @@ function addSkill(temp1_skill_div, temp1_skill_arr) {
 }
 
 //!download html to pdf
-let element = "";
-let templateIdOfContainers = ["template1_container","template2_container","template3_container"]
-function generatePDF() {
-  // Use html2pdf to create and download the PDF
-  selectTemplate.addEventListener("input", (e) => {
-    for (let i =0; i<2; i++) {
-      if (selectTemplate.value === optionList[i]) {
-        element = document.getElementById( templateIdOfContainers[i]);
-      } 
+let element = document.getElementById("template1_container");
+let templateIdOfContainers = [
+  "template1_container",
+  "template2_container",
+  "template3_container",
+];
+selectTemplate.addEventListener("input", (e) => {
+  console.log(selectTemplate.value);
+  for (let i = 0; i <= 2; i++) {
+    if (selectTemplate.value == optionList[i]) {
+      element = document.getElementById(templateIdOfContainers[i]);
     }
-  });
+  }
+});
+console.log(element);
+function generatePDF() {
+  // Use html2pdf to create and download the PDf
   html2pdf(element, {
     margin: 10,
     filename: "resume.pdf",
@@ -339,4 +362,3 @@ function generatePDF() {
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
   });
 }
-
