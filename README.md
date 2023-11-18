@@ -1,5 +1,5 @@
 # TEAM 05
-hosted link:
+### hosted link:<a href="https://thakaresakshi.github.io/MCT_4_Team_05/">click here</a>
 
 
 # Table Of Content
@@ -9,8 +9,7 @@ hosted link:
 4. [Getting Started](#getting-started)
 5. [Contributing](#contributing)
 6. [Challenges Faced and Resolutions](#challenges-faced-and-resolutions)
-7. [License](#license)
-8. [Website UI Explanation](#website-ui-explanation)
+7. [Website UI Explanation](#website-ui-explanation)
 ---
 
 ## Introduction:
@@ -93,4 +92,8 @@ Throughout the development of our Lalpathlabs Clone Website Project, our team en
    - Coordinating tasks among team members and ensuring smooth version control throughout the project proved to be a challenge.
    - **Resolution:** We implemented a version control system (e.g., Git and GitHub) and established clear branching and merging processes.
    - Regular team meetings and communication channels, such as Slack and zoom/ google meet, facilitated collaboration and issue tracking.
-     
+  
+  ## Web UI:
+  
+  ![WhatsApp Image 2023-11-18 at 11 45 40 AM](https://github.com/ThakareSakshi/MCT_4_Team_05/assets/86354291/9a670542-64bb-49fb-a4fc-a27888137c5b)
+

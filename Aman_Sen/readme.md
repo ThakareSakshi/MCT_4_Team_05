@@ -41,7 +41,8 @@ The Flipkart Page Sort and Filter project revolutionizes the online shopping exp
 
 ## Website UI Explanation:
 
-![image](https://github.com/ThakareSakshi/MCT_4_Team_05/assets/57188328/c7b9f708-c189-4db7-9410-0d0abd5b6e67)
+![flipcart_ui](https://github.com/ThakareSakshi/MCT_4_Team_05/assets/57188328/d9aa9c1e-bdd1-4750-9e06-718c5c360a44)
+
 #### Header Section:
   - Logo with "Explore Plus" link. Search box with a search icon. "Login" button. "Become A Seller" and "More" links. Shopping cart icon.
 
