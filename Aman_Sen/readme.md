@@ -35,7 +35,7 @@ The Flipkart Page Sort and Filter project revolutionizes the online shopping exp
 
 - CSS: Styles and enhances the visual presentation, ensuring an engaging and user-friendly interface.
 
-- JavaScript: Powers the interactivity of the game, measuring words per minute (WPM) and accuracy, and providing instant feedback.
+- JavaScript: JavaScript functionality includes dynamic sorting (Popularity, Price), real-time filtering (discount, Flipkart Assured, offers, ratings), and a price range slider for seamless user interaction in the Flipkart-like E-commerce Website.
 
 ---
 
