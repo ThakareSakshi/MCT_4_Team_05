@@ -65,8 +65,8 @@ body {
 .card2 {
     display: flex;
     justify-content: center;
-    width: 12%;
-    height: 30vh;
+    width: fit-content;
+    height: 50vh;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 10px;
@@ -231,6 +231,15 @@ textarea {
 
 .mb-3 select {
     width: 80%;
+}
+input{
+    padding:8px;
+    border:none;
+    border:1px solid rgb(138, 137, 137);
+    outline-color: #7578e0;
+}
+select{
+    padding: 6px;
 }
 
 @media screen and (max-width: 720px) {
