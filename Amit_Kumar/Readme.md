@@ -5,20 +5,20 @@
 
 HTML Code:
 
-#1.I've defined the basic structure of my webpage, including metadata, title, Tailwind CSS styles, and JavaScript scripts.
-#2.There's a container that holds the content, and it's styled with Tailwind CSS to have rounded corners and a background image.
-#3."every cart" section contains an image, imege details, price and a"Pay Now" button.
+1.I've defined the basic structure of my webpage, including metadata, title, Tailwind CSS styles, and JavaScript scripts.
+2.There's a container that holds the content, and it's styled with Tailwind CSS to have rounded corners and a background image.
+3."every cart" section contains an image, imege details, price and a"Pay Now" button.
 
 
 Tailwind CSS Code:
 
-#1.I've defined styles for the entire page, setting background images and fonts.
-#2.I've styled various elements, such as buttons, containers, and input fields.
-#3.I've applied styles to elements for responsiveness, including different styles for smaller screens.
+1.I've defined styles for the entire page, setting background images and fonts.
+2.I've styled various elements, such as buttons, containers, and input fields.
+3.I've applied styles to elements for responsiveness, including different styles for smaller screens.
 
 
 JavaScript Code:
 
-#1.I've defined variables to access various HTML elements in my page, such as buttons and form inputs.
-#2.The pay button trigger a payment process based on the input values.
-#3.it resolves or rejects a promise to simulate a successful or failed payment.
+1.I've defined variables to access various HTML elements in my page, such as buttons and form inputs.
+2.The pay button trigger a payment process based on the input values.
+3.it resolves or rejects a promise to simulate a successful or failed payment.
