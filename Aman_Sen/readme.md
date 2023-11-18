@@ -71,10 +71,7 @@ Special price, original price, and discount percentage.
 "Free delivery" and "Bank offer" labels.
 
 #### JavaScript Functionality:
-  - Products are dynamically generated based on the data in the "products" array.
-Sorting functionality for "Popularity," "Price -- Low to High," and "Price -- High to Low."
-Filtering functionality for discount, Flipkart Assured, offers, and customer ratings.
-Price filter with a range slider.
+  -JavaScript functionality includes dynamic sorting (Popularity, Price), real-time filtering (discount, Flipkart Assured, offers, ratings), and a price range slider for seamless user interaction in the Flipkart-like E-commerce Website.
 
 
 
