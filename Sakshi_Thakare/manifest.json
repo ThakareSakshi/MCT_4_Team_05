@@ -22,13 +22,15 @@
             "assets/play.png",
             "assets/delete.png",
             "assets/save.png",
-            "assets/oops.gif"
+            "assets/oops.gif",
+            "assets/bk-icon.png"
           ],
           "matches": ["https://*.youtube.com/*"]
         }
       ],
     "action":{
-        "default_popup":"popup.html"
+        "default_popup":"popup.html",
+        "default_icon":"assets/bk-icon.png"
     },
     "manifest_version":3
 }
