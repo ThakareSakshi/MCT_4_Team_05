@@ -1,0 +1,110 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+body{
+    background-color: rgb(26, 26, 26);
+    overflow-x: hidden;
+}
+nav{
+    display: flex;
+    padding: 20px 30px;
+    position: fixed;
+    top:0;
+    left: 0;
+    /* width: 100vw; */
+    color:white;
+    z-index: 50;
+    justify-content: flex-end;
+    gap:30px;
+    font-size: 18px;
+    font-weight: 500;
+}
+nav li{
+    list-style: none;
+    cursor: pointer;
+
+}
+nav li:hover{
+    color:rgb(244, 201, 144)
+}
+.hero-section{
+    height:80vh;
+    width:100vw;
+    background: url("https://img.freepik.com/free-photo/rustic-brick-wall-background_53876-92955.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1700179200&semt=ais") no-repeat  fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* background: fixed; */
+}
+.hero-section-heading{
+    color:white;
+    z-index: 30;
+    text-align: center;
+}
+.hero-section-heading h1,.overlay h1{
+    font-size: 60px;
+    
+}
+.hero-section-heading h3{
+    font-size: 30px;
+    color:rgb(184, 183, 182)
+}
+.overlay{
+    height:100%;
+    width: 100%;
+    background: rgba(9, 10, 11, 0.6);
+    position: absolute;
+    z-index: 0;
+
+}
+/* img{
+    height:100%;
+    width: 100%;
+} */
+.heading{
+    text-align: center;
+    color:rgb(0,30,75);
+    padding:30px;
+}
+.heading h1{
+    font-size: 40px;
+    font-weight: 700;
+}
+.heading h4{
+   /* color:rgb(85, 84, 83); */
+   font-size: 20px;
+   
+}
+/* .project{
+    display: flex;
+    padding:20px;
+    gap:40px;
+    justify-content:space-between;
+    width: 90%;
+    background-color: aqua;
+    
+    
+}
+
+.project-thumbnail{
+    width: 50%;
+
+}
+.project-detail{
+    width:50%;
+    text-align: left;
+}
+.project-title{
+    font-size: 40px;
+    color:rgb(0,30,75);
+}
+.subheading{
+    color:rgb(29, 100, 171);
+    font-size: 20px;
+    padding-bottom:20px;
+} */

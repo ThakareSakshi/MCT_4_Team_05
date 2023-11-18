@@ -258,5 +258,55 @@ input {
     font-weight: 700;
     cursor: pointer;
 }
+/* article{
+  display: none;
+} */
+.display-div{
+  display:unset;
+}
+.category-item:hover{
+  color:#2874f0;
+  font-weight: 600;
+}
 
+
+@media (max-width:1000px){
+  .products_container{
+    flex-wrap: wrap;
+  }
+  .product_card{
+    min-width: 250px;
+    width: 250px;
+  }
+  nav{
+    overflow: hidden;
+  }
+  .product_category_list{
+     overflow-x: hidden;
+  }
+  .sidebar-divs-container{
+    width: 300px;
+  }
+ 
+}
+@media (max-width:800px) {
+  .main-body-container{
+    flex-direction: column;
+  }
+  .sidebar-divs-container{
+    width: 100%;
+  }
+  .sidebar-divs-container .filter{
+    display: flex;
+   flex-direction:row;
+   align-items: center;
+  }
+  .main-content-container{
+    width: 100%;
+  }
+  .category-item{
+    font-size: 10px;
+    margin:4px;
+  }
+}
 

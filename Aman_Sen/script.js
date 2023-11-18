@@ -619,3 +619,15 @@ range.addEventListener("input", (e) => {
     });
     addProducts(filterArr);
 });
+
+
+// ----------------------display fliter element -----------------
+
+let filter_categories=document.querySelectorAll(".filter-category-head");
+filter_categories.forEach(ele=>{
+  ele.addEventListener("toggle",(e)=>{
+    let parent=e.target.parentNode;
+    let article=parent.querySelector("article")
+    article.toggleAttribute("hidden")
+  })
+})
