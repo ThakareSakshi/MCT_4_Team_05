@@ -1,5 +1,5 @@
 # TEAM 05
-hosted link:
+### hosted link:<a href="https://thakaresakshi.github.io/MCT_4_Team_05/">click here</a>
 
 
 # Table Of Content
@@ -9,8 +9,7 @@ hosted link:
 4. [Getting Started](#getting-started)
 5. [Contributing](#contributing)
 6. [Challenges Faced and Resolutions](#challenges-faced-and-resolutions)
-7. [License](#license)
-8. [Website UI Explanation](#website-ui-explanation)
+7. [Website UI Explanation](#website-ui-explanation)
 ---
 
 ## Introduction:
