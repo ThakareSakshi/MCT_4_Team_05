@@ -13,6 +13,8 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./style.css" />
+    <!-- animation cdn -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <header>
@@ -43,11 +45,12 @@
           Wide selection of designs. Carefully optimised for clarity and impact.
           One click layouts - no formatting required.
         </p>
+
         <div class="section2_template">
           <div class="carousel">
-            <img src="./Assets/resume_1.jpg" alt="template1" />
-            <img src="./Assets/resume_2.jpg" alt="template2" />
-            <img src="./Assets/resume_3.jpg" alt="template3" />
+            <img src="./Assets/resume_1.jpg" alt="template1" data-aos="fade-up-right"/>
+            <img src="./Assets/resume_2.jpg" alt="template2" data-aos="fade-up"/>
+            <img src="./Assets/resume_3.jpg" alt="template3" data-aos="fade-up-left"/>
           </div>
         </div>
       </section>
@@ -56,7 +59,7 @@
         <h1>Easiest and most feature-packed CV builder available</h1>
         <div class="section3_content">
           <div class="section3_content_sub">
-            <img src="./Assets/s3_1.svg" alt="" />
+            <img src="./Assets/s3_1.svg" alt="" data-aos="flip-left"/>
             <h3>Step-by-step builder</h3>
             <p>
               Easy to use step-by-step builder enables you to create a
@@ -64,7 +67,7 @@
             </p>
           </div>
           <div class="section3_content_sub">
-            <img src="./Assets/s3_2.svg" alt="" />
+            <img src="./Assets/s3_2.svg" alt="" data-aos="flip-left"/>
             <h3>Pre-written content</h3>
             <p>
               Make your CV more sophisticated. Select from thousands of
@@ -73,7 +76,7 @@
             </p>
           </div>
           <div class="section3_content_sub">
-            <img src="./Assets/s3_3.svg" alt="" />
+            <img src="./Assets/s3_3.svg" alt="" data-aos="flip-left"/>
             <h3>Expert tips & guidance</h3>
             <p>
               Get detailed CV-building tips and advice every step of the way. CV
@@ -81,7 +84,7 @@
             </p>
           </div>
           <div class="section3_content_sub">
-            <img src="./Assets/s3_4.svg" alt="" />
+            <img src="./Assets/s3_4.svg" alt="" data-aos="flip-left"/>
             <h3>Unlimited CVs & downloads</h3>
             <p>
               No limit on the number of CVs you can create. Unlimited printing,
@@ -122,5 +125,12 @@
         </div>
       </footer>
     </main>
+
+    <!-- animation cdn link -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
