@@ -24,7 +24,15 @@
         <div class="new-board">
            + Add Board
         </div>
-    </div>    
+    </div>   
+    <!-- ----------------displat this section to add new board-----------------  -->
+ <div class="displayBoard">
+    <input type="text" class="Projectname" placeholder="project Title">
+    <div><button class="Add-new-board-btn">Add</button>
+        <button class="cancel">cancel</button></div>
+ </div>
+
+  
     <!-- ------------------contain all boards------------------ -->
  <div class="boardS">
         
@@ -51,18 +59,15 @@
             <button class="add-task" onclick="displayTaskTitleInputDiv(event)">Add Task</button>
         </div>
     </div> -->
+    <div class="Board"><div class="Board-name"><span>update</span>
+        <span class="trash" onclick="deleteCard(event)"><i class="fa-solid fa-ellipsis"></i></span></div><div class="to-do-list-container"><div class="All-tasks"><div class="task" draggable="true" ondragstarts="dragAndDrop(event)"><div class="task-title"><div><div class="task-header"><span class="label-container" style="padding: 8px;">urgent</span><span class="trash" onclick="deleteTaskCard(event)"> <i class="fa fa-trash" aria-hidden="true"></i></span></div><div><span class="title">title 1</span></div></div></div><div class="addMoreDetail" onclick="updateDetailsInTask(event)"><i class="fa-solid fa-bars-staggered"></i></div><div class="date">2023-11-16</div></div></div><div class="task-title-input" style="display: none;"><input type="text" class="task-name" placeholder="Task Title">
+        <div><button class="Add-new-task-btn">Add</button>
+            <button class="cancel-task">cancel</button></div></div><button class="add-task" onclick="displayTaskTitleInputDiv(event)" fdprocessedid="uctdql">add task</button></div></div>
     
 
  </div>
 
-<!-- ----------------displat this section to add new board-----------------  -->
- <div class="displayBoard">
-    <input type="text" class="Projectname" placeholder="project Title">
-    <div><button class="Add-new-board-btn">Add</button>
-        <button class="cancel">cancel</button></div>
- </div>
 
- 
  <!-- ----------------this data update data in tasks--------------- -->
  <section>
     <div class="dialog">
